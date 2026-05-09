@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 024103faa8bcb5d44b2ba29473d8ef16
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137588
+  packageName: Unlock System
+  packageVersion: 1.1
+  assetPath: Assets/UnlockSystem/MeshTextures/Materials/Drum_Base.mat
+  uploadId: 413954
