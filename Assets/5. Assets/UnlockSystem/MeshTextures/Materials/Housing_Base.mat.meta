@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 550492a69d469e6408fda89892e3bbc0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137588
+  packageName: Unlock System
+  packageVersion: 1.1
+  assetPath: Assets/UnlockSystem/MeshTextures/Materials/Housing_Base.mat
+  uploadId: 413954
