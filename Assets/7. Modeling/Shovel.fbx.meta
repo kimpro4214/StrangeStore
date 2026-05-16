@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbd298146b8517547ad958d6cc1a1aee
+guid: 6358e0d23f88c4a4eb08fe1793b7e3aa
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f6d6095fd2d39b849aeede1e6d80cb11, type: 2}
+      name: DarkSteel
+    second: {fileID: 2100000, guid: 54481129cdabfe146b51f13251e43911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkSteel.001
+    second: {fileID: 2100000, guid: 0b6a109993f35b74dbbaac88bc37de2f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

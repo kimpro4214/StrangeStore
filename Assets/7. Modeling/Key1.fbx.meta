@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbd298146b8517547ad958d6cc1a1aee
+guid: 788e0abd638142d4580a428c6d13eebd
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f6d6095fd2d39b849aeede1e6d80cb11, type: 2}
+      name: Brass
+    second: {fileID: 2100000, guid: a4d50950cc7b8bc43b74e476831b72a6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

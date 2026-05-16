@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbd298146b8517547ad958d6cc1a1aee
+guid: 06835dd440ff722419c61ba8d98b2820
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f6d6095fd2d39b849aeede1e6d80cb11, type: 2}
+      name: BanknoteMat
+    second: {fileID: 2100000, guid: c5aa2e81949514e4eb05fd1f01cfea5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BanknoteTextMat
+    second: {fileID: 2100000, guid: f4d5b1f2d6454c44bb5dd26edfd32a5c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

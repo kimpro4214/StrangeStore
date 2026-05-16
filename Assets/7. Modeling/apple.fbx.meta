@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbd298146b8517547ad958d6cc1a1aee
+guid: a2c2754ee64c76745b801f5cbe119c62
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f6d6095fd2d39b849aeede1e6d80cb11, type: 2}
+      name: AppleRed.001
+    second: {fileID: 2100000, guid: b01a821351cc291418ca6a2f400c8396, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeafGreen
+    second: {fileID: 2100000, guid: bab6e78b10480d34bb320e65cf056270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StemBrown
+    second: {fileID: 2100000, guid: b8a3192727506574fb158589e922fd3d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

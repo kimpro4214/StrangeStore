@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbd298146b8517547ad958d6cc1a1aee
+guid: c3a6e17ce658beb439e6d060ff5cd47d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f6d6095fd2d39b849aeede1e6d80cb11, type: 2}
+      name: Brass
+    second: {fileID: 2100000, guid: a57dc0d0c2c4a0f4fa35fbc5c6477fa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkSteel
+    second: {fileID: 2100000, guid: d37c61ed05a5e07488101f5541448d72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mahogany
+    second: {fileID: 2100000, guid: cb860e2e309d1804ba4ad57056627bb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: 96c0a1fadae21764db477188d8dd6872, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Velvet
+    second: {fileID: 2100000, guid: 8b76f6866e6fcb445ac355a8a4b788b6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
