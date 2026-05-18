@@ -4291,7 +4291,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 0, a: 0.29803923}
+    Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -4393,6 +4393,7 @@ MonoBehaviour:
   - {fileID: 3887666890940628930}
   - {fileID: 6037198194048734268}
   - {fileID: 3183859041070125355}
+  - {fileID: 1342568427429570629}
   _vectorProperties: []
   _colorProperties: []
   _floatProperties: []

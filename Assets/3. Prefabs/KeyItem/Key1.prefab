@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 788e0abd638142d4580a428c6d13eebd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.941
+      value: 1.207
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 788e0abd638142d4580a428c6d13eebd,
         type: 3}
@@ -321,7 +321,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 0, a: 0.29803923}
+    Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:

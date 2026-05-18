@@ -2,24 +2,24 @@ using UnityEngine;
 using Oculus.Interaction; // Meta SDK
 using System.Linq;        // FirstOrDefault() 사용을 위해 필수!
 
-public class SnapZoneGhostKey : MonoBehaviour
+public class SnapZoneGhost : MonoBehaviour
 {
     [Header("Meta 스냅 컴포넌트")]
     [SerializeField] private SnapInteractable _snapInteractable;
 
     [Header("표시할 고스트 프리뷰들")]
-    [SerializeField] private GameObject _circleGhost;
-    [SerializeField] private GameObject _polygonGhost;
-    [SerializeField] private GameObject _starGhost;
+    [SerializeField] private GameObject _appleGhost;
+    [SerializeField] private GameObject _moneyGhost;
+    [SerializeField] private GameObject _musigBoxGhost;
 
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
 
     private void HandleStateChanged(InteractableStateChangeArgs args)
     {
-        _circleGhost.SetActive(false);
-        _polygonGhost.SetActive(false);
-        _starGhost.SetActive(false);
+        _appleGhost.SetActive(false);
+        _moneyGhost.SetActive(false);
+        _musigBoxGhost.SetActive(false);
 
         // 2. Hover 분기 (물건을 들고 테이블 구역에 진입했을 때)
         if (args.NewState == InteractableState.Hover)
@@ -30,21 +30,21 @@ public class SnapZoneGhostKey : MonoBehaviour
             if (currentInteractor != null)
             {
                 // 그 녀석의 GameObject에서 아이템 종류(TradableItem)를 읽어옵니다.
-                KeyItem item = currentInteractor.gameObject.GetComponent<KeyItem>();
+                TradableItem item = currentInteractor.gameObject.GetComponent<TradableItem>();
 
                 if (item != null)
                 {
                     // ★ 여기가 바로 고스트 띄우기 분기점!
                     switch (item.type)
                     {
-                        case KeyType.Circle:
-                            _circleGhost.SetActive(true);
+                        case ItemType.Apple:
+                            _appleGhost.SetActive(true);
                             break;
-                        case KeyType.Polygon:
-                            _polygonGhost.SetActive(true);
+                        case ItemType.Money:
+                            _moneyGhost.SetActive(true);
                             break;
-                        case KeyType.Star:
-                            _starGhost.SetActive(true);
+                        case ItemType.MusicBox:
+                            _musigBoxGhost.SetActive(true);
                             break;
                     }
                 }
@@ -59,30 +59,30 @@ public class SnapZoneGhostKey : MonoBehaviour
 
             if (currentInteractor != null)
             {
-                KeyItem item = currentInteractor.gameObject.GetComponent<KeyItem>();
+                TradableItem item = currentInteractor.gameObject.GetComponent<TradableItem>();
                 if (item != null)
                 {
-                    ProcessUnlock(item.type);
+                    ProcessTrade(item.type);
                 }
             }
         }
     }
 
     // 아이템을 올려놨을 때 타입별로 실행할 분기
-    private void ProcessUnlock(KeyType type)
+    private void ProcessTrade(ItemType type)
     {
         switch (type)
         {
-            case KeyType.Circle:
-                Debug.Log("Circle Key 언락");
-                // 여기에 애니메이션 실행이나 작동 로직 추가
+            case ItemType.Apple:
+                Debug.Log("사과 스냅.");
+                // 여기에 애니메이션 실행 등 로직 추가
                 break;
 
-            case KeyType.Polygon:
-                Debug.Log("Polygon Key 언락");
+            case ItemType.Money:
+                Debug.Log("돈 스냅.");
                 break;
-            case KeyType.Star:
-                Debug.Log("Star Key 언락");
+            case ItemType.MusicBox:
+                Debug.Log("뮤직 박스 스냅.");
                 break;
         }
     }

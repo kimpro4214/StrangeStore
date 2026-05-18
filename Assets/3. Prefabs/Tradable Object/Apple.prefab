@@ -123,6 +123,12 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 2495656826124254445}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &2692218352569688706 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8647204876555772305, guid: a2c2754ee64c76745b801f5cbe119c62,
+    type: 3}
+  m_PrefabInstance: {fileID: 2495656826124254445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3342571942390989244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a2c2754ee64c76745b801f5cbe119c62,
@@ -237,6 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.MaterialPropertyBlockEditor
   _renderers:
   - {fileID: 1763481270927518258}
+  - {fileID: 2692218352569688706}
+  - {fileID: 4100425552141863120}
   _vectorProperties: []
   _colorProperties: []
   _floatProperties: []
@@ -284,7 +292,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 1, g: 0.3, b: 0.3, a: 1}
+    Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
@@ -401,3 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TradableItem
   type: 0
+--- !u!23 &4100425552141863120 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1893194068992980029, guid: a2c2754ee64c76745b801f5cbe119c62,
+    type: 3}
+  m_PrefabInstance: {fileID: 2495656826124254445}
+  m_PrefabAsset: {fileID: 0}

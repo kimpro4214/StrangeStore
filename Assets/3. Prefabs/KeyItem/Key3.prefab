@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b685b7038b4c1da44a7a9bbf371c11eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.416
+      value: 9.186
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b685b7038b4c1da44a7a9bbf371c11eb,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b685b7038b4c1da44a7a9bbf371c11eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.678
+      value: 8.891
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b685b7038b4c1da44a7a9bbf371c11eb,
         type: 3}
@@ -354,7 +354,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 0, a: 0.29803923}
+    Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:

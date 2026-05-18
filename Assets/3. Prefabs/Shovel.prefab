@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3266c3d920715b84089935c4ab019210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.InteractableColorVisual
-  _interactableView: {fileID: 0}
-  _editor: {fileID: 0}
+  _interactableView: {fileID: 3059553645325266960}
+  _editor: {fileID: 2668810546057144436}
   _colorShaderPropertyName: _EmissionColor
   _normalColorState:
     Color: {r: 0, g: 0, b: 0, a: 0}
@@ -250,7 +250,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 0, a: 0.29803923}
+    Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     ColorCurve:
       serializedVersion: 2
       m_Curve:
