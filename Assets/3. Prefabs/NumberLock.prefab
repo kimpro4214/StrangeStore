@@ -592,15 +592,15 @@ MonoBehaviour:
   drumLines:
   - drumTransform: {fileID: 4295650005860552112}
     curIndex: 0
-    answerIndex: 0
+    answerIndex: 1
     prevIndex: 0
   - drumTransform: {fileID: 4701429004788675228}
     curIndex: 0
-    answerIndex: 0
+    answerIndex: 2
     prevIndex: 0
   - drumTransform: {fileID: 7398243075301912116}
     curIndex: 0
-    answerIndex: 0
+    answerIndex: 3
     prevIndex: 0
   rotateDuration: 0.3
   rotateEase: 3
@@ -617,6 +617,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockItem
   unlocked: 0
+  keyItem: {fileID: 0}
+  _explosionParticle: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
+    type: 3}
 --- !u!95 &2897520064399810991
 Animator:
   serializedVersion: 7

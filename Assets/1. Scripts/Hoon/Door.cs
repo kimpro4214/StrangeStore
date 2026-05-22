@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class LeftDoor : MonoBehaviour
+public class Door : MonoBehaviour
 {
     Animator animator;
+    public float openDelay = 2.5f;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -11,7 +12,7 @@ public class LeftDoor : MonoBehaviour
 
     public IEnumerator OpenDoor()
     {
-        yield return new WaitForSeconds(2f);
-        animator.SetTrigger("LeftDoor_Open");
+        yield return new WaitForSeconds(openDelay);
+        animator.SetTrigger("Door_Open");
     }
 }

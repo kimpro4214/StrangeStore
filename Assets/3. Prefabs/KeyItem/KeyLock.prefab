@@ -1747,12 +1747,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d2a6513a114c3bf48913f2dde4454ef9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3622298
+      value: -1.055
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2a6513a114c3bf48913f2dde4454ef9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.275
+      value: 1.403
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2a6513a114c3bf48913f2dde4454ef9,
         type: 3}
@@ -1873,6 +1873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockItem
   unlocked: 0
+  keyItem: {fileID: 0}
+  _explosionParticle: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
+    type: 3}
 --- !u!95 &983486302968096734
 Animator:
   serializedVersion: 7
