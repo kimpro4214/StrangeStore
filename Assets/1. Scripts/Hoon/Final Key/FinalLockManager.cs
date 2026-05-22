@@ -7,8 +7,8 @@ public class FinalLockManager : MonoBehaviour
     public LockItem[] _finalKeys;
 
     [Header("클리어 시 열릴 문")]
-    public LeftDoor leftDoor;
-    public RightDoor rightDoor;
+    public Door leftDoor;
+    public Door rightDoor;
 
 
     private void Awake()

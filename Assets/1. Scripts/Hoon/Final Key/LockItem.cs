@@ -7,7 +7,7 @@ public class LockItem : MonoBehaviour
     [HideInInspector]
     public KeyItem keyItem;
 
-    public GameObject explosionParticle;
+    public GameObject _explosionParticle;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -20,7 +20,7 @@ public class LockItem : MonoBehaviour
 
     public void DestroyLock()
     {
-        Destroy(Instantiate(explosionParticle, transform.position, Quaternion.identity), 3f);
+        Destroy(Instantiate(_explosionParticle, transform.position, Quaternion.identity), 3f);
         if (keyItem != null) Destroy(keyItem.gameObject);
         Destroy(this.gameObject);
     }

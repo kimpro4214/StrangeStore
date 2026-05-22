@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.67
+      value: 2.469
       objectReference: {fileID: 0}
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
@@ -225,9 +225,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3287577984724991310, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
-      propertyPath: explosionParticle
+      propertyPath: _explosionParticle
       value: 
-      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+      objectReference: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
         type: 3}
     - target: {fileID: 3896445890860038416, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
@@ -256,15 +256,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536412696727992043, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
-      propertyPath: explosionParticle
+      propertyPath: _explosionParticle
       value: 
-      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+      objectReference: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
         type: 3}
     - target: {fileID: 8242619712671966626, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: leftDoor
       value: 
-      objectReference: {fileID: 361070880}
+      objectReference: {fileID: 361070889}
     - target: {fileID: 8242619712671966626, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: rightDoor
@@ -272,9 +272,9 @@ PrefabInstance:
       objectReference: {fileID: 361070879}
     - target: {fileID: 8573477839120415951, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
-      propertyPath: explosionParticle
+      propertyPath: _explosionParticle
       value: 
-      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+      objectReference: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
         type: 3}
     - target: {fileID: 9085704272266447228, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
@@ -303,18 +303,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd93d232617590b40a4636fcdabe669d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightDoor
---- !u!114 &361070880 stripped
+--- !u!114 &361070889 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 288292385545865527, guid: 3f96ec85163c8334094d5f4d6223ff86,
+  m_CorrespondingSourceObject: {fileID: 8542500484050216726, guid: 3f96ec85163c8334094d5f4d6223ff86,
     type: 3}
   m_PrefabInstance: {fileID: 361070878}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2426f244a7f5b294fbe2934422fa26d0, type: 3}
+  m_Script: {fileID: 11500000, guid: fd93d232617590b40a4636fcdabe669d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LeftDoor
+  m_EditorClassIdentifier: Assembly-CSharp::Door
 --- !u!1 &421707085
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,26 +589,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6462570327872627163, guid: 8ad025268b02c804abd70f5e08dcdb62,
-        type: 3}
-      propertyPath: _hoverColorState.Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6462570327872627163, guid: 8ad025268b02c804abd70f5e08dcdb62,
-        type: 3}
-      propertyPath: _hoverColorState.Color.b
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6462570327872627163, guid: 8ad025268b02c804abd70f5e08dcdb62,
-        type: 3}
-      propertyPath: _hoverColorState.Color.g
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6462570327872627163, guid: 8ad025268b02c804abd70f5e08dcdb62,
-        type: 3}
-      propertyPath: _hoverColorState.Color.r
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -709,31 +689,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key2
       objectReference: {fileID: 0}
-    - target: {fileID: 8379430752257354357, guid: d9d3ab1d1796c2a41a2dc685cd16ebeb,
-        type: 3}
-      propertyPath: _hoverColorState.Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379430752257354357, guid: d9d3ab1d1796c2a41a2dc685cd16ebeb,
-        type: 3}
-      propertyPath: _hoverColorState.Color.b
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379430752257354357, guid: d9d3ab1d1796c2a41a2dc685cd16ebeb,
-        type: 3}
-      propertyPath: _hoverColorState.Color.g
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379430752257354357, guid: d9d3ab1d1796c2a41a2dc685cd16ebeb,
-        type: 3}
-      propertyPath: _hoverColorState.Color.r
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d3ab1d1796c2a41a2dc685cd16ebeb, type: 3}
+--- !u!1 &1445429329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9131913039380172138, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3700039129145047533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1445429333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445429329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e8d831d0736ad4eb1b4e78f390bb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TradeManager
 --- !u!134 &1605876375
 PhysicsMaterial:
   m_ObjectHideFlags: 0
@@ -755,26 +733,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2196371108929242702, guid: 7bf650961b3eb7345bae09009f00096c,
-        type: 3}
-      propertyPath: _hoverColorState.Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196371108929242702, guid: 7bf650961b3eb7345bae09009f00096c,
-        type: 3}
-      propertyPath: _hoverColorState.Color.b
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196371108929242702, guid: 7bf650961b3eb7345bae09009f00096c,
-        type: 3}
-      propertyPath: _hoverColorState.Color.g
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196371108929242702, guid: 7bf650961b3eb7345bae09009f00096c,
-        type: 3}
-      propertyPath: _hoverColorState.Color.r
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 3263300029610857881, guid: 7bf650961b3eb7345bae09009f00096c,
         type: 3}
       propertyPath: m_Material
@@ -1120,6 +1078,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 1204052595}
+    - target: {fileID: 7821782105850516821, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+        type: 3}
+      propertyPath: _maxInteractors
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8295986979552246904, guid: 47e1a6e9d17ab144daf94b1eb431864a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1178,7 +1141,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9131913039380172138, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1445429333}
   m_SourcePrefab: {fileID: 100100000, guid: 47e1a6e9d17ab144daf94b1eb431864a, type: 3}
 --- !u!1001 &4169239364845971814
 PrefabInstance:
@@ -1475,7 +1442,7 @@ PrefabInstance:
     - target: {fileID: 2338247129138121459, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.16
+      value: 10.731
       objectReference: {fileID: 0}
     - target: {fileID: 2338247129138121459, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
         type: 3}
@@ -1485,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 2338247129138121459, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.72
+      value: 9.032
       objectReference: {fileID: 0}
     - target: {fileID: 2338247129138121459, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
         type: 3}
@@ -1527,6 +1494,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyLock
       objectReference: {fileID: 0}
+    - target: {fileID: 7206910690869130148, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
+        type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
+        type: 3}
+    - target: {fileID: 7206910690869130148, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
+        type: 3}
+      propertyPath: _explosionParticle
+      value: 
+      objectReference: {fileID: 1000011797152326, guid: e3a34a16e23bc6e4492529bada19d205,
+        type: 3}
     - target: {fileID: 7516241195633273988, guid: d375f1bed7ffc6f4d99d1993b1c53ec2,
         type: 3}
       propertyPath: _interactorFilters.Array.size

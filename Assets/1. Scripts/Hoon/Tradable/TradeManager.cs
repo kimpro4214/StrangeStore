@@ -25,7 +25,6 @@ public class TradeManager : MonoBehaviour
                 Debug.Log("사과 스냅.");
                 // 여기에 애니메이션 실행 등 로직 추가
                 break;
-
             case ItemType.Money:
                 Debug.Log("돈 스냅.");
                 break;
