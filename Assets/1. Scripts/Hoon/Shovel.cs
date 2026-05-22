@@ -15,16 +15,16 @@ public class ShovelAction : MonoBehaviour
 
     private void HandleStateChanged(InteractableStateChangeArgs args)
     {
-        // 1. 삽을 손으로 딱 잡았을 때 (Select)
+        // 1삽을 손으로 딱 잡았을 때 (Select)
         if (args.NewState == InteractableState.Select)
         {
             _isGrabbed = true;
 
-            // 삽을 쥔 주체(Interactor) 정보를 가져옵니다.
+            // 삽을 쥔 주체 정보
             var interactor = _grabInteractable.SelectingInteractors.FirstOrDefault();
             if (interactor != null)
             {
-                // 나를 잡은 손 오브젝트 이름에 "Left"가 포함되어 있으면 왼손, 없으면 오른손으로 매핑합니다.
+                // 잡은 손 매핑
                 if (interactor.gameObject.name.Contains("Left"))
                 {
                     _holdingController = OVRInput.Controller.LTouch;
@@ -37,7 +37,7 @@ public class ShovelAction : MonoBehaviour
                 }
             }
         }
-        // 2. 삽을 손에서 놓았을 때 (Normal)
+        // 삽을 손에서 놓았을 때
         else if (args.NewState == InteractableState.Normal)
         {
             _isGrabbed = false;
@@ -61,6 +61,6 @@ public class ShovelAction : MonoBehaviour
     // 트리거를 눌렀을 때 발동될 함수
     private void ExecuteShovelFunction()
     {
-        Debug.Log("탕! 삽 기능 작동 성공! (땅 파기, 휘두르기 등)");
+        Debug.Log("삽 기능 작동.");
     }
 }

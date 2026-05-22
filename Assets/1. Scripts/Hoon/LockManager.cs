@@ -94,7 +94,9 @@ public class LockManager : MonoBehaviour
 
     private void OnClear()
     {
-        Debug.Log("[LockManager] CLEAR!");
+        Debug.Log("NumLock CLEAR");
+        LockItem lockItem = GetComponent<LockItem>();
+        FinalLockManager.instance.Unlock(lockItem, null);
     }
 
     public void IncrementDrum(int idx)

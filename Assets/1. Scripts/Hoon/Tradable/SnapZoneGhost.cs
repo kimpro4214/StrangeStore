@@ -34,7 +34,7 @@ public class SnapZoneGhost : MonoBehaviour
 
                 if (item != null)
                 {
-                    // ★ 여기가 바로 고스트 띄우기 분기점!
+                    // 고스트 띄우기 분기점
                     switch (item.type)
                     {
                         case ItemType.Apple:
@@ -54,36 +54,11 @@ public class SnapZoneGhost : MonoBehaviour
         // Grab 풀어서 테이블에 아이템 Snap됐을 때.
         else if (args.NewState == InteractableState.Select)
         {
-            // 테이블에 올려놓은 아이템 가져오기
-            SnapInteractor currentInteractor = _snapInteractable.SelectingInteractors.FirstOrDefault();
-
-            if (currentInteractor != null)
-            {
-                TradableItem item = currentInteractor.gameObject.GetComponent<TradableItem>();
-                if (item != null)
-                {
-                    ProcessTrade(item.type);
-                }
-            }
+            // 스냅된 아이템 매니저에 건네주기
+            SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
+            TradeManager.instance.OnSnapTradableItem(currentInteractor);
         }
     }
 
-    // 아이템을 올려놨을 때 타입별로 실행할 분기
-    private void ProcessTrade(ItemType type)
-    {
-        switch (type)
-        {
-            case ItemType.Apple:
-                Debug.Log("사과 스냅.");
-                // 여기에 애니메이션 실행 등 로직 추가
-                break;
-
-            case ItemType.Money:
-                Debug.Log("돈 스냅.");
-                break;
-            case ItemType.MusicBox:
-                Debug.Log("뮤직 박스 스냅.");
-                break;
-        }
-    }
+    
 }
