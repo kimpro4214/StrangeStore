@@ -44,6 +44,8 @@ public class SnapKeyController : MonoBehaviour
             // 자물쇠 열기 시작
             LockItem lockItem = _snapInteractable.GetComponentInParent<LockItem>();
             KeyItem keyItem = currentInteractor.GetComponent<KeyItem>();
+            if (lockItem != null) Debug.Log("Lock 인스턴스 존재");
+            if (keyItem != null) Debug.Log("Key 인스턴스 존재");
             FinalLockManager.instance.Unlock(lockItem, keyItem);
         }
     }

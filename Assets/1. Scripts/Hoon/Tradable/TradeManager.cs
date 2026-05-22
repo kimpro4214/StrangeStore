@@ -4,21 +4,16 @@ using UnityEngine;
 public class TradeManager : MonoBehaviour
 {
     public static TradeManager instance;
+
     private void Awake()
     {
         if (instance == null) instance = this;
 
     }
-    public void OnSnapTradableItem(SnapInteractor _sanpInteraction)
+
+    public void OnSnapTradableItem(TradableItem item)
     {
-        if (_sanpInteraction != null)
-        {
-            TradableItem item = _sanpInteraction.gameObject.GetComponent<TradableItem>();
-            if (item != null)
-            {
-                ProcessTrade(item.type);
-            }
-        }
+         ProcessTrade(item.type);
     }
 
     // 아이템을 올려놨을 때 타입별로 실행할 분기

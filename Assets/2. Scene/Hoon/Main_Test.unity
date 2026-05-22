@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.6
+      value: 6.05
       objectReference: {fileID: 0}
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.28
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 1389169935648262794, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
@@ -213,6 +213,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2216062119578816444, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216062119578816444, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287577984724991310, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+        type: 3}
+    - target: {fileID: 3896445890860038416, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.431
+      objectReference: {fileID: 0}
     - target: {fileID: 4576190131877259554, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: m_Name
@@ -233,6 +254,12 @@ PrefabInstance:
       propertyPath: drumLines.Array.data[2].answerIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6536412696727992043, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+        type: 3}
     - target: {fileID: 8242619712671966626, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
       propertyPath: leftDoor
@@ -243,6 +270,22 @@ PrefabInstance:
       propertyPath: rightDoor
       value: 
       objectReference: {fileID: 361070879}
+    - target: {fileID: 8573477839120415951, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+        type: 3}
+    - target: {fileID: 9085704272266447228, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.554
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085704272266447228, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.433
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
