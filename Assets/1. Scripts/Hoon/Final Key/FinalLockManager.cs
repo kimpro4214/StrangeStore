@@ -20,13 +20,10 @@ public class FinalLockManager : MonoBehaviour
     public void Unlock(LockItem lockItem, KeyItem key)
     {
         Debug.Log("KeyLock Unlock");
-        if (lockItem != null)
-        {
-            lockItem.unlocked = true;
-            lockItem.keyItem = key;
-            lockItem.PlayUnlockAnimation();
-            CheckAllUnlocked();
-        }
+        lockItem.unlocked = true;
+        lockItem.keyItem = key;
+        lockItem.PlayUnlockAnimation();
+        CheckAllUnlocked();
     }
 
     private void CheckAllUnlocked()
