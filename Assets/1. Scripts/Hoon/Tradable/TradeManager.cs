@@ -1,14 +1,14 @@
 using Oculus.Interaction;
+using System.Collections;
 using UnityEngine;
 
 public class TradeManager : MonoBehaviour
 {
     public static TradeManager instance;
-
+    [SerializeField] private WhistleController _whistleController;
     private void Awake()
     {
         if (instance == null) instance = this;
-
     }
 
     public void OnSnapTradableItem(TradableItem item)
@@ -29,8 +29,13 @@ public class TradeManager : MonoBehaviour
                 Debug.Log("µ· ½º³À.");
                 break;
             case ItemType.MusicBox:
-                Debug.Log("¹ÂÁ÷ ¹Ú½º ½º³À.");
+                Debug.Log("¹ÂÁ÷ ¹Ú½º ½º³À. ÈÖÆÄ¶÷ Àç»ý.");
+                if (_whistleController != null)
+                {
+                    _whistleController.StartWhistle();
+                }
                 break;
         }
     }
+
 }

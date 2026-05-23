@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LockManager : MonoBehaviour
 {
@@ -97,6 +98,7 @@ public class LockManager : MonoBehaviour
         Debug.Log("NumLock CLEAR");
         LockItem lockItem = GetComponent<LockItem>();
         FinalLockManager.instance.Unlock(lockItem, null);
+        AudioManager.Instance.Play3D(SoundName.lock_open, transform.position);
     }
 
     public void IncrementDrum(int idx)

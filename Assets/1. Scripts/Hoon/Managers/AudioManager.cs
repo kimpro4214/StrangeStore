@@ -1,10 +1,15 @@
 using UnityEngine;
 using System;
-using UnityEditor.Rendering;
 
 public enum SoundName {
     bgm1,
-    shovel
+    dig,
+    dig_fail,
+    dig_success,
+    whistel1,
+    whistel2,
+    lock_open,
+    lock_explode
 }
 
 // 인스펙터에서 세팅할 수 있도록 직렬화
@@ -64,7 +69,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"AudioManager: {name} 이라는 이름의 사운드를 찾을 수 없습니다!");
             return;
         }
-        s.source.Play();
+
+        if (s.loop) s.source.Play();
+        else s.source.PlayOneShot(s.source.clip);
     }
 
     // 2D 사운드 정지
@@ -102,6 +109,6 @@ public class AudioManager : MonoBehaviour
         aSource.Play();
 
         // 소리 재생이 끝나면 자동으로 임시 오브젝트 삭제
-        Destroy(tempAudioGo, s.clip.length);
+        Destroy(tempAudioGo, aSource.clip.length);
     }
 }

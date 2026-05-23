@@ -1,6 +1,8 @@
 using UnityEngine;
 using Oculus.Interaction; // Meta SDK
 using System.Linq;        // FirstOrDefault() 사용을 위해 필수!
+using System.Collections;
+using DG.Tweening;
 
 public class SnapTradableController : MonoBehaviour
 {
@@ -11,6 +13,14 @@ public class SnapTradableController : MonoBehaviour
     [SerializeField] private GameObject _appleGhost;
     [SerializeField] private GameObject _moneyGhost;
     [SerializeField] private GameObject _musigBoxGhost;
+
+    [Header("템 이동 목표 트랜스폼")]
+    [SerializeField] private Transform _targetTransform;
+
+    [Header("템 스냅 유지 시간")]
+    public float onBoardTime = 1f;
+    [Header("템 상인에게 이동하는 시간")]
+    public float onMoveTime = 1.5f;
 
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
@@ -31,7 +41,7 @@ public class SnapTradableController : MonoBehaviour
             {
                 // 그 녀석의 GameObject에서 아이템 종류(TradableItem)를 읽어옵니다.
                 TradableItem item = currentInteractor.gameObject.GetComponent<TradableItem>();
-                ActiveGhost(item);
+                ActiveGhost(item, true);
             }
         }
 
@@ -40,12 +50,24 @@ public class SnapTradableController : MonoBehaviour
         {
             // 스냅된 아이템 매니저에 건네주기
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
+
+            // 스냅된 아이템 잡기 비활성화
+            currentInteractor.GetComponent<GrabInteractable>().enabled = false;
+
+            // 스냅된 아이템 상호작용 매니저에서 진행시킴.
             TradableItem item = currentInteractor.GetComponent<TradableItem>();
             if (item != null) TradeManager.instance.OnSnapTradableItem(item);
+
+            // 고스트 제거
+            ActiveGhost(item, false);
+
+            // 아이템 상인에게 이동 후 제거
+            StartCoroutine(HandleAndDestroy(currentInteractor.gameObject));
+
         }
     }
 
-    void ActiveGhost(TradableItem item)
+    void ActiveGhost(TradableItem item, bool setting)
     {
         if (item != null)
         {
@@ -53,15 +75,34 @@ public class SnapTradableController : MonoBehaviour
             switch (item.type)
             {
                 case ItemType.Apple:
-                    _appleGhost.SetActive(true);
+                    _appleGhost.SetActive(setting);
                     break;
                 case ItemType.Money:
-                    _moneyGhost.SetActive(true);
+                    _moneyGhost.SetActive(setting);
                     break;
                 case ItemType.MusicBox:
-                    _musigBoxGhost.SetActive(true);
+                    _musigBoxGhost.SetActive(setting);
                     break;
             }
         }
+    }
+
+    IEnumerator HandleAndDestroy(GameObject item)
+    {
+        // 1초 후 상인에게 이동.
+        yield return new WaitForSeconds(onBoardTime);
+        var grab = item.GetComponent<Grabbable>();
+        if (grab != null) grab.enabled = false;
+
+        var grabInter = item.GetComponent<GrabInteractable>();
+        if (grabInter != null) grabInter.enabled = false;
+
+        var snapInteractor = item.GetComponent<SnapInteractor>();
+        if (snapInteractor != null) snapInteractor.enabled = false;
+
+        // 1.5초간 이동, 0.2배로 작아짐 후 제거
+        item.transform.DOMove(_targetTransform.position, onMoveTime).SetEase(Ease.OutQuad);
+        item.transform.DOScale(item.transform.localScale * 0.2f, onMoveTime);
+        Destroy(item, onMoveTime);
     }
 }

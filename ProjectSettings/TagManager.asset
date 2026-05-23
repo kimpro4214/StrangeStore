@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Drum
+  - Shovel
   layers:
   - Default
   - TransparentFX

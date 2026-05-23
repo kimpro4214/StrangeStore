@@ -23,6 +23,7 @@ public class FinalLockManager : MonoBehaviour
         lockItem.unlocked = true;
         lockItem.keyItem = key;
         lockItem.PlayUnlockAnimation();
+        if (key != null) AudioManager.Instance.Play3D(SoundName.lock_open, key.transform.position);
         CheckAllUnlocked();
     }
 
