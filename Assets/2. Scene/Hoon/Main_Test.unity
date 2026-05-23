@@ -412,6 +412,12 @@ PhysicsMaterial:
   m_Bounciness: 0
   m_FrictionCombine: 0
   m_BounceCombine: 0
+--- !u!4 &1768236928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3459783824450639839, guid: 70698409699680444a5f7b7ee5c508a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 824170782123427914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1828975436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 601208066961957372, guid: 3bb27b62600ef0a419fc42eb1f796fa7,
@@ -679,6 +685,11 @@ PrefabInstance:
       propertyPath: _whistleController
       value: 
       objectReference: {fileID: 1828975436}
+    - target: {fileID: 3132975121834768729, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+        type: 3}
+      propertyPath: _merchantTransform
+      value: 
+      objectReference: {fileID: 1768236928}
     - target: {fileID: 4295959328336823178, guid: 47e1a6e9d17ab144daf94b1eb431864a,
         type: 3}
       propertyPath: _whistleController

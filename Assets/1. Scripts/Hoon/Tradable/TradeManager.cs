@@ -38,9 +38,4 @@ public class TradeManager : MonoBehaviour
         }
     }
 
-    IEnumerator DestroyItem(GameObject item)
-    {
-        yield return new WaitForSeconds(3f);
-        item.SetActive(false);
-    }
 }

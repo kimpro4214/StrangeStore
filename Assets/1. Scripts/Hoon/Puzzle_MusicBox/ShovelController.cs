@@ -17,6 +17,7 @@ public class ShovelController : MonoBehaviour
     public GameObject key;
 
     private bool _isGrabbed = false;
+    private bool isCleared = false;
 
     private void OnEnable() => _grabInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _grabInteractable.WhenStateChanged -= HandleStateChanged;
@@ -53,13 +54,14 @@ public class ShovelController : MonoBehaviour
     // 트리거를 눌렀을 때 발동될 함수
     private void Dig()
     {
-        Debug.Log("삽 기능 작동.");
+        if (isCleared) return;
         if (_digPoint.canDigging)
         {
             Debug.Log("열쇠 발굴 성공!");
             AudioManager.Instance.Play2D(SoundName.dig_success);
             _whistleController.StopWhistle();
             key.SetActive(true);
+            isCleared = true;
         }
         else
         {
