@@ -51,6 +51,9 @@ public class SnapTradableController : MonoBehaviour
             // 스냅된 아이템 매니저에 건네주기
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
 
+            // 스냅 소리 활성화
+            AudioManager.Instance.Play2D(SoundName.snap_item);
+
             // 스냅된 아이템 잡기 비활성화
             currentInteractor.GetComponent<GrabInteractable>().enabled = false;
 

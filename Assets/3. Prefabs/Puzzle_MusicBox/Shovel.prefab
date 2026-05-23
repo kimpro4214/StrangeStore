@@ -842,6 +842,9 @@ MonoBehaviour:
   _digPoint: {fileID: 0}
   _whistleController: {fileID: 0}
   key: {fileID: 0}
+  _holdDuration: 2
+  _gaugeBar: {fileID: 0}
+  canInteract: 0
 --- !u!1 &9105450201533057031
 GameObject:
   m_ObjectHideFlags: 0
