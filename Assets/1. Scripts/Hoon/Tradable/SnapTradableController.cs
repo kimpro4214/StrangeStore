@@ -17,6 +17,11 @@ public class SnapTradableController : MonoBehaviour
     [Header("템 이동 목표 트랜스폼")]
     [SerializeField] private Transform _targetTransform;
 
+    [Header("템 스냅 유지 시간")]
+    public float onBoardTime = 1f;
+    [Header("템 상인에게 이동하는 시간")]
+    public float onMoveTime = 1.5f;
+
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
 
@@ -85,7 +90,7 @@ public class SnapTradableController : MonoBehaviour
     IEnumerator HandleAndDestroy(GameObject item)
     {
         // 1초 후 상인에게 이동.
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(onBoardTime);
         var grab = item.GetComponent<Grabbable>();
         if (grab != null) grab.enabled = false;
 
@@ -96,8 +101,8 @@ public class SnapTradableController : MonoBehaviour
         if (snapInteractor != null) snapInteractor.enabled = false;
 
         // 1.5초간 이동, 0.2배로 작아짐 후 제거
-        item.transform.DOMove(_targetTransform.position, 1.5f).SetEase(Ease.OutQuad);
-        item.transform.DOScale(item.transform.localScale * 0.2f, 1.5f);
-        Destroy(item, 1.5f);
+        item.transform.DOMove(_targetTransform.position, onMoveTime).SetEase(Ease.OutQuad);
+        item.transform.DOScale(item.transform.localScale * 0.2f, onMoveTime);
+        Destroy(item, onMoveTime);
     }
 }

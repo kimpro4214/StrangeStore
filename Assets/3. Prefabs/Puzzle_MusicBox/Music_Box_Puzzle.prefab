@@ -120,6 +120,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0b9b8c2773a47c9498b1681ed1e69c50, type: 3}
   - {fileID: 8300000, guid: 531559cd30fff094180673b137aecb86, type: 3}
   _source: {fileID: 4517546367209347458}
+  shovelController: {fileID: 5240494194610396643}
 --- !u!82 &4517546367209347458
 AudioSource:
   m_ObjectHideFlags: 0
@@ -170,8 +171,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.12898406
-      value: 0.372818
+      time: 0.107244104
+      value: 0.3514557
       inSlope: -2.5009959
       outSlope: -2.5009959
       tangentMode: 0
@@ -179,8 +180,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.25434417
-      value: 0.24247742
+      time: 0.23984832
+      value: 0.18908691
       inSlope: -0.62524897
       outSlope: -0.62524897
       tangentMode: 0
@@ -189,7 +190,7 @@ AudioSource:
       outWeight: 0
     - serializedVersion: 3
       time: 0.4434723
-      value: 0.14259338
+      value: 0.10520935
       inSlope: -0.15631224
       outSlope: -0.15631224
       tangentMode: 0
@@ -197,8 +198,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.77825624
-      value: 0.0846405
+      time: 0.7637604
+      value: 0.068618774
       inSlope: -0.03907806
       outSlope: -0.03907806
       tangentMode: 0
@@ -207,7 +208,7 @@ AudioSource:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.025
+      value: 0.046362303
       inSlope: -0.02500997
       outSlope: -0.02500997
       tangentMode: 0
@@ -530,3 +531,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1830916511497814725}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5240494194610396643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5895565309586595622, guid: 7c850be9e44e54543819219fa0a5bf44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830916511497814725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4f2381ea744104bbf8d5b55687f048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShovelAction

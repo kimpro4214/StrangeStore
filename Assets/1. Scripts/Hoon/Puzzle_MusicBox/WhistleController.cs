@@ -7,10 +7,15 @@ public class WhistleController : MonoBehaviour
     [SerializeField] private AudioClip[] _whistleClips;
     [SerializeField] private AudioSource _source;
     private Coroutine whistleCoroutine;
+    public ShovelController shovelController;
 
     public void StartWhistle()
     {
-        if (whistleCoroutine == null) whistleCoroutine = StartCoroutine(WhistleLoop());
+        if (whistleCoroutine == null)
+        {
+            whistleCoroutine = StartCoroutine(WhistleLoop());
+            shovelController.canInteract = true;
+        }
     }
 
     public void StopWhistle()

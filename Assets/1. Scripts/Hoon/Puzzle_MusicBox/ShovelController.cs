@@ -17,6 +17,7 @@ public class ShovelController : MonoBehaviour
     public GameObject key;
 
     private bool _isGrabbed = false;
+    public bool canInteract = false;
     private bool isCleared = false;
 
     private void OnEnable() => _grabInteractable.WhenStateChanged += HandleStateChanged;
@@ -55,7 +56,8 @@ public class ShovelController : MonoBehaviour
     private void Dig()
     {
         if (isCleared) return;
-        if (_digPoint.canDigging)
+        // 오르골을 전달 해야만 열쇠 발굴 가능.
+        if (_digPoint.canDigging || canInteract)
         {
             Debug.Log("열쇠 발굴 성공!");
             AudioManager.Instance.Play2D(SoundName.dig_success);
@@ -65,7 +67,7 @@ public class ShovelController : MonoBehaviour
         }
         else
         {
-            Debug.Log("발굴 위치가 아님.");
+            Debug.Log("발굴 위치가 아님 or 오르골 안건네줌");
             AudioManager.Instance.Play2D(SoundName.dig_fail);
         }
     }
