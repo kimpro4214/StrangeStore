@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Oculus.Interaction;
-using System.Linq;
+using System.Collections;
 
 public class ShovelController : MonoBehaviour
 {
@@ -16,9 +16,16 @@ public class ShovelController : MonoBehaviour
     [Header("Reward Key")]
     public GameObject key;
 
+    [Header("게이지 시간")]
+    [SerializeField] private float _holdDuration = 2f;
+
+    [Header("게이지 3D 오브젝트")]
+    [SerializeField] private Transform _gaugeBar;  // 스케일로 표시할 바
+
     private bool _isGrabbed = false;
     public bool canInteract = false;
     private bool isCleared = false;
+    private Coroutine _digCoroutine;
 
     private void OnEnable() => _grabInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _grabInteractable.WhenStateChanged -= HandleStateChanged;
@@ -26,38 +33,82 @@ public class ShovelController : MonoBehaviour
     private void Start()
     {
         key.SetActive(false);
+        _gaugeBar.gameObject.SetActive(false);
+        UpdateGauge(0f);
     }
 
     private void HandleStateChanged(InteractableStateChangeArgs args)
     {
-        _isGrabbed = false;
+        _isGrabbed = (args.NewState == InteractableState.Select);
 
-        // 삽을 손으로 딱 잡았을 때
-        if (args.NewState == InteractableState.Select)
-        {
-            Debug.Log("삽을 잡았습니다.");
-            _isGrabbed = true;
-        }
+        // 놓으면 차징 취소
+        if (!_isGrabbed) CancelCharge();
     }
 
     private void Update()
     {
-        // 삽 안들고 있으면 패스
-        if (!_isGrabbed) return;
+        if (!_isGrabbed || isCleared) return;
 
+        // 트리거 누르기 시작
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
             OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
         {
-            Dig();
+            _digCoroutine = StartCoroutine(DigCharge());
+            _gaugeBar.gameObject.SetActive(true);
+        }
+
+        // 트리거 떼면 취소
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
+            OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+        {
+            CancelCharge();
+            _gaugeBar.gameObject.SetActive(false);
         }
     }
 
-    // 트리거를 눌렀을 때 발동될 함수
+    private IEnumerator DigCharge()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < _holdDuration)
+        {
+            elapsed += Time.deltaTime;
+            float progress = elapsed / _holdDuration;
+            UpdateGauge(progress);
+            yield return null;
+        }
+
+        UpdateGauge(0f);  // 게이지 리셋
+        _digCoroutine = null;
+        Dig();
+    }
+
+    private void CancelCharge()
+    {
+        if (_digCoroutine != null)
+        {
+            StopCoroutine(_digCoroutine);
+            _digCoroutine = null;
+        }
+        UpdateGauge(0f);
+    }
+
+    private void UpdateGauge(float progress)
+    {
+        if (_gaugeBar == null) return;
+
+        // X축 스케일로 게이지 표현
+        Vector3 scale = _gaugeBar.localScale;
+        scale.x = progress * 0.25f;
+        _gaugeBar.localScale = scale;
+    }
+
     private void Dig()
     {
+        _gaugeBar.gameObject.SetActive(false);
         if (isCleared) return;
-        // 오르골을 전달 해야만 열쇠 발굴 가능.
-        if (_digPoint.canDigging || canInteract)
+
+        if (_digPoint.canDigging && canInteract)
         {
             Debug.Log("열쇠 발굴 성공!");
             AudioManager.Instance.Play2D(SoundName.dig_success);

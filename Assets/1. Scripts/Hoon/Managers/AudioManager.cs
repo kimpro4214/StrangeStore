@@ -9,7 +9,8 @@ public enum SoundName {
     whistel1,
     whistel2,
     lock_open,
-    lock_explode
+    lock_explode,
+    snap_item
 }
 
 // 인스펙터에서 세팅할 수 있도록 직렬화
