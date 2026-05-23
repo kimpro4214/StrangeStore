@@ -1,6 +1,7 @@
 using UnityEngine;
 using Oculus.Interaction; // Meta SDK
 using System.Linq;        // FirstOrDefault() 사용을 위해 필수!
+using System.Collections;
 
 public class SnapTradableController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SnapTradableController : MonoBehaviour
     [SerializeField] private GameObject _appleGhost;
     [SerializeField] private GameObject _moneyGhost;
     [SerializeField] private GameObject _musigBoxGhost;
+
+    [Header("상인 트랜스폼")]
+    [SerializeField] private Transform _merchantTransform;
 
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
@@ -40,8 +44,16 @@ public class SnapTradableController : MonoBehaviour
         {
             // 스냅된 아이템 매니저에 건네주기
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
+
+            // 스냅된 아이템 잡기 비활성화
+            currentInteractor.GetComponent<GrabInteractable>().enabled = false;
+
+            // 스냅된 아이템 상호작용 매니저에서 진행시킴.
             TradableItem item = currentInteractor.GetComponent<TradableItem>();
             if (item != null) TradeManager.instance.OnSnapTradableItem(item);
+
+            // 아이템 상인에게 이동 후 제거
+            StartCoroutine(HandleAndDestroy(currentInteractor.gameObject));
         }
     }
 
@@ -63,5 +75,12 @@ public class SnapTradableController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    IEnumerator HandleAndDestroy(GameObject item)
+    {
+        // 1초 후 상인에게 이동.
+        yield return new WaitForSeconds(1f);
+
     }
 }
