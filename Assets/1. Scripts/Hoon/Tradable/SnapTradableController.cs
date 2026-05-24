@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class SnapTradableController : MonoBehaviour
 {
+    public static SnapTradableController Instance;
     [Header("Meta ½º³À ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private SnapInteractable _snapInteractable;
 
@@ -25,6 +26,10 @@ public class SnapTradableController : MonoBehaviour
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
     private void HandleStateChanged(InteractableStateChangeArgs args)
     {
         _appleGhost.SetActive(false);

@@ -25,6 +25,7 @@ public class WhistleController : MonoBehaviour
 
     private IEnumerator WhistleLoop()
     {
+        yield return new WaitForSeconds(SnapTradableController.Instance.onBoardTime);
         while (true)
         {
             // 랜덤 휘파람 재생 후 2-4초 랜덤으로 기다린 후 다시 랜덤 휘파람 재생 반복.

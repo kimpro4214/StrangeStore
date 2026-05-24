@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LockManager : MonoBehaviour
+public class NumberLockManager : MonoBehaviour
 {
     [System.Serializable]
     public class DrumLine
