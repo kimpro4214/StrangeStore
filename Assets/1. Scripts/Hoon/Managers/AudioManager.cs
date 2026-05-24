@@ -115,11 +115,13 @@ public class AudioManager : MonoBehaviour
 
         if (s.loop)
         {
+            if (_bgmMuted) return;
             s.source.volume = s.volume * _bgmVolume;
             s.source.Play();
         }
         else
         {
+            if (_sfxMuted) return;
             s.source.PlayOneShot(s.source.clip, s.volume * _sfxVolume);
         }
     }
@@ -132,6 +134,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play3D(SoundName name, Vector3 position)
     {
+        if (_sfxMuted) return;
         Sound s = Array.Find(sounds, item => item.name == name);
         if (s == null)
         {

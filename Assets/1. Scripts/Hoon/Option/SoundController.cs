@@ -36,5 +36,8 @@ public class SoundController : MonoBehaviour
         AudioManager.Instance.ToggleSFXMute();
         SFXButton.image.sprite = AudioManager.Instance.IsSFXMuted() ? muteOnSprite : muteOffSprite;
     }
-
+    public void OnSFXSliderRelease()
+    {
+        AudioManager.Instance.Play2D(SoundName.snap_item);
+    }
 }
