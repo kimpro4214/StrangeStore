@@ -1,7 +1,9 @@
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SoundController : MonoBehaviour
+public class OptionController : MonoBehaviour
 {
     [Header("SFX ¹ÂÆ® ¹öÆ°")]
     public Button SFXButton;
@@ -39,5 +41,10 @@ public class SoundController : MonoBehaviour
     public void OnSFXSliderRelease()
     {
         AudioManager.Instance.Play2D(SoundName.snap_item);
+    }
+    public void RestartGame()
+    {
+        DOTween.KillAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
