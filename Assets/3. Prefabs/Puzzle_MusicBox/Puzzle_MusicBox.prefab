@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6528636405938174494}
   m_Layer: 0
-  m_Name: Music_Box_Puzzle
+  m_Name: Puzzle_MusicBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
