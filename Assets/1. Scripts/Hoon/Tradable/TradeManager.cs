@@ -15,11 +15,11 @@ public class TradeManager : MonoBehaviour
     {
         // 상인 대사
         DialogueMerchant.Instance.OnItemSnapped(item);
-        ProcessTrade(item.type);
+        OnSnapTrade(item.type);
     }
 
     // 아이템을 올려놓은 순간 타입별로 실행할 분기
-    public void ProcessTrade(ItemType type)
+    public void OnSnapTrade(ItemType type)
     {
         switch (type)
         {
@@ -38,4 +38,14 @@ public class TradeManager : MonoBehaviour
         }
     }
 
+    // 상인의 대사가 모두 끝난 직후 실행할 분기
+    public void OnDialogueEnded(ItemType type)
+    {
+        switch (type)
+        {
+            case ItemType.MusicBox:
+                _whistleController.StartWhistle();
+                break;
+        }
+    }
 }

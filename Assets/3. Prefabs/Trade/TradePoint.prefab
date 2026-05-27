@@ -1896,7 +1896,7 @@ Transform:
   m_GameObject: {fileID: 4091912530749236194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.764, y: 0.148, z: -0.966}
+  m_LocalPosition: {x: -0.969, y: 0.148, z: -1.083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3560,9 +3560,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapZoneGhost
   _snapInteractable: {fileID: 7821782105850516821}
-  _appleGhost: {fileID: 5073867315966522457}
-  _moneyGhost: {fileID: 6531847495775387855}
-  _musigBoxGhost: {fileID: 6150360296926876161}
+  _ghosts:
+  - type: 0
+    ghost: {fileID: 5073867315966522457}
+  - type: 1
+    ghost: {fileID: 6531847495775387855}
+  - type: 2
+    ghost: {fileID: 6150360296926876161}
   _targetTransform: {fileID: 6847858310986356998}
   onBoardTime: 1
   onMoveTime: 1.5
