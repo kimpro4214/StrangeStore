@@ -52,8 +52,8 @@ MonoBehaviour:
   - {fileID: 6536412696727992043}
   - {fileID: 3287577984724991310}
   - {fileID: 8573477839120415951}
-  leftDoor: {fileID: 8542500484050216726}
-  rightDoor: {fileID: 3395196456910142651}
+  leftDoor: {fileID: 1725973572782056334}
+  rightDoor: {fileID: 2416620706311143101}
 --- !u!1001 &2062313660505590444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,16 +62,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1389169935648262794}
     m_Modifications:
-    - target: {fileID: 6185937851195669113, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5052634
-      objectReference: {fileID: 0}
-    - target: {fileID: 6185937851195669113, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1936567
-      objectReference: {fileID: 0}
     - target: {fileID: 6185937851195669113, guid: ea51da4cf1acfea49802848e749a5a13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -145,106 +135,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6185937851196024413, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3788592227188154488}
-    - targetCorrespondingSourceObject: {fileID: 6185937851196024413, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8542500484050216726}
-    - targetCorrespondingSourceObject: {fileID: 6185937851196024403, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4041385595201812}
-    - targetCorrespondingSourceObject: {fileID: 6185937851196024403, guid: ea51da4cf1acfea49802848e749a5a13,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3395196456910142651}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea51da4cf1acfea49802848e749a5a13, type: 3}
---- !u!1 &5279928415861976305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6185937851196024413, guid: ea51da4cf1acfea49802848e749a5a13,
+--- !u!114 &1725973572782056334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 823363274283018530, guid: ea51da4cf1acfea49802848e749a5a13,
     type: 3}
   m_PrefabInstance: {fileID: 2062313660505590444}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &3788592227188154488
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279928415861976305}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0070d3f91288c3443b34f4dd705599f5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8542500484050216726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279928415861976305}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd93d232617590b40a4636fcdabe669d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  openDelay: 2.5
---- !u!1 &5279928415861976319 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6185937851196024403, guid: ea51da4cf1acfea49802848e749a5a13,
+--- !u!114 &2416620706311143101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4402058502220575761, guid: ea51da4cf1acfea49802848e749a5a13,
     type: 3}
   m_PrefabInstance: {fileID: 2062313660505590444}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &4041385595201812
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279928415861976319}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18aae09b2b92bcb4ea5568e520d3b224, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3395196456910142651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279928415861976319}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd93d232617590b40a4636fcdabe669d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightDoor
-  openDelay: 2.5
 --- !u!4 &5279928415862272213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6185937851195669113, guid: ea51da4cf1acfea49802848e749a5a13,

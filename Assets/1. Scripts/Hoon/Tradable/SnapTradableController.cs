@@ -1,19 +1,19 @@
-using UnityEngine;
-using Oculus.Interaction; // Meta SDK
-using System.Linq;        // FirstOrDefault() 사용을 위해 필수!
-using System.Collections;
 using DG.Tweening;
+using Oculus.Interaction; // Meta SDK
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;        // FirstOrDefault() 사용을 위해 필수!
+using UnityEngine;
 
 public class SnapTradableController : MonoBehaviour
 {
     public static SnapTradableController Instance;
+
     [Header("Meta 스냅 컴포넌트")]
     [SerializeField] private SnapInteractable _snapInteractable;
 
-    [Header("표시할 고스트 프리뷰들")]
-    [SerializeField] private GameObject _appleGhost;
-    [SerializeField] private GameObject _moneyGhost;
-    [SerializeField] private GameObject _musigBoxGhost;
+    [Header("아이템별 고스트 프리뷰")]
+    [SerializeField] private GhostPair[] _ghosts;
 
     [Header("템 이동 목표 트랜스폼")]
     [SerializeField] private Transform _targetTransform;
@@ -23,76 +23,66 @@ public class SnapTradableController : MonoBehaviour
     [Header("템 상인에게 이동하는 시간")]
     public float onMoveTime = 1.5f;
 
-    private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
-    private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
+    Dictionary<ItemType, GameObject> _ghostMap;
+
+    [System.Serializable]
+    public class GhostPair
+    {
+        public ItemType type;
+        public GameObject ghost;
+    }
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
+        _ghostMap = _ghosts.ToDictionary(g => g.type, g => g.ghost);
     }
+
+    private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
+    private void OnDisable() => _snapInteractable.WhenStateChanged -= HandleStateChanged;
+
     private void HandleStateChanged(InteractableStateChangeArgs args)
     {
-        _appleGhost.SetActive(false);
-        _moneyGhost.SetActive(false);
-        _musigBoxGhost.SetActive(false);
+        // 모든 고스트 끄기
+        HideAllGhosts();
 
-        // Hover 분기 (물건을 들고 테이블 구역에 진입했을 때)
         if (args.NewState == InteractableState.Hover)
         {
-            // 호버한 오브젝트 가져오기.
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
-
             if (currentInteractor != null)
             {
-                // 그 녀석의 GameObject에서 아이템 종류(TradableItem)를 읽어옵니다.
                 TradableItem item = currentInteractor.gameObject.GetComponent<TradableItem>();
                 ActiveGhost(item, true);
             }
         }
-
-        // Grab 풀어서 테이블에 아이템 Snap됐을 때.
         else if (args.NewState == InteractableState.Select)
         {
-            // 스냅된 아이템 매니저에 건네주기
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
 
-            // 스냅 소리 활성화
+            // 잡기 사운드 재생, 잡기 비활성화
             AudioManager.Instance.Play2D(SoundName.snap_item);
-
-            // 스냅된 아이템 잡기 비활성화
             currentInteractor.GetComponent<GrabInteractable>().enabled = false;
 
-            // 스냅된 아이템 상호작용 매니저에서 진행시킴.
+            // 트레이드 함수 실행
             TradableItem item = currentInteractor.GetComponent<TradableItem>();
             if (item != null) TradeManager.instance.OnSnapTradableItem(item);
 
-            // 고스트 제거
             ActiveGhost(item, false);
-
-            // 아이템 상인에게 이동 후 제거
             StartCoroutine(HandleAndDestroy(currentInteractor.gameObject));
-
         }
+    }
+
+    void HideAllGhosts()
+    {
+        foreach (var pair in _ghosts)
+            if (pair.ghost != null) pair.ghost.SetActive(false);
     }
 
     void ActiveGhost(TradableItem item, bool setting)
     {
-        if (item != null)
-        {
-            // 고스트 띄우기 분기점
-            switch (item.type)
-            {
-                case ItemType.Apple:
-                    _appleGhost.SetActive(setting);
-                    break;
-                case ItemType.Money:
-                    _moneyGhost.SetActive(setting);
-                    break;
-                case ItemType.MusicBox:
-                    _musigBoxGhost.SetActive(setting);
-                    break;
-            }
-        }
+        if (item == null) return;
+        if (_ghostMap.TryGetValue(item.type, out var ghost) && ghost != null)
+            ghost.SetActive(setting);
     }
 
     IEnumerator HandleAndDestroy(GameObject item)
