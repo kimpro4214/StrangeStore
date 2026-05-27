@@ -1586,6 +1586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueMerchant
   typer: {fileID: 7198658601352124438}
+  _whistleController: {fileID: 0}
   autoNextDelay: 2.2
 --- !u!114 &7198658601352124438
 MonoBehaviour:

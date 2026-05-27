@@ -5,7 +5,7 @@ using UnityEngine;
 public class TradeManager : MonoBehaviour
 {
     public static TradeManager instance;
-    [SerializeField] private WhistleController _whistleController;
+    [SerializeField] public WhistleController _whistleController;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -18,7 +18,7 @@ public class TradeManager : MonoBehaviour
         ProcessTrade(item.type);
     }
 
-    // 아이템을 올려놨을 때 타입별로 실행할 분기
+    // 아이템을 올려놓은 순간 타입별로 실행할 분기
     public void ProcessTrade(ItemType type)
     {
         switch (type)
@@ -30,11 +30,10 @@ public class TradeManager : MonoBehaviour
                 Debug.Log("돈 스냅.");
                 break;
             case ItemType.MusicBox:
-                Debug.Log("뮤직 박스 스냅. 휘파람 재생.");
-                if (_whistleController != null)
-                {
-                    _whistleController.StartWhistle();
-                }
+                Debug.Log("뮤직 박스 스냅.");
+                break;
+            case ItemType.Fish:
+                Debug.Log("생선 스냅. 열쇠 소환");
                 break;
         }
     }

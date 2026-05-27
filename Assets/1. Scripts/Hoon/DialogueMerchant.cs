@@ -8,6 +8,8 @@ public class DialogueMerchant : MonoBehaviour
 
     public DialogueTyper typer;
 
+    private ItemType currentItem;
+
     [Header("다음 대사까지의 딜레이")]
     public float autoNextDelay = 3f;
 
@@ -25,7 +27,7 @@ public class DialogueMerchant : MonoBehaviour
         { ItemType.MusicBox, new[] {
             "이런 골동품을... 어디서 구했나?",
             "흠.. 내가 마법으로 열쇠 위치를 알려주겠네.",
-            "지금 들리는 휘파람 소리를 따라가서 땅을 파보게."
+            "휘파람 소리를 내줄테니 그 곳으로 가서 땅을 파보게."
         }},
         { ItemType.Dumbbell, new[] { 
             "이건... 운동하라는 건가?" ,
@@ -48,6 +50,7 @@ public class DialogueMerchant : MonoBehaviour
     public void OnItemSnapped(TradableItem item) => StartCoroutine(OnItemGiven(item));
     IEnumerator OnItemGiven(TradableItem item)
     {
+        currentItem = item.type;
         yield return new WaitForSeconds(SnapTradableController.Instance.onBoardTime);
         StopAutoNext();
         lineQueue.Clear();
@@ -95,5 +98,18 @@ public class DialogueMerchant : MonoBehaviour
     void EndDialogue()
     {
         typer.EraseText();
+        OnDialogueEnded(currentItem);
+    }
+
+    // 모든 대사가 끝난 순간 호출.
+    void OnDialogueEnded(ItemType type)
+    {
+        switch (type)
+        {
+            case ItemType.MusicBox:
+                WhistleController wc = TradeManager.instance._whistleController;
+                if (wc != null) wc.StartWhistle();
+                break;
+        }
     }
 }
