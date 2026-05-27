@@ -418,78 +418,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
-      propertyPath: reactions.Array.data[1].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: reactions.Array.data[2].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
       propertyPath: reactions.Array.data[3].type
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
-      propertyPath: reactions.Array.data[0].lines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: reactions.Array.data[1].lines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: reactions.Array.data[2].lines.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
       propertyPath: reactions.Array.data[3].lines.Array.size
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[0].lines.Array.data[0]'
-      value: "\uBB50\uC57C.. \uD754\uD574 \uBE60\uC9C4 \uC0AC\uACFC\uC796\uB294\uAC00?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[0].lines.Array.data[1]'
-      value: "\uC77C\uB2E8 \uBC1B\uAE34 \uD558\uACA0\uC9C0\uB9CC.. \uAE30\uB300\uB294
-        \uD558\uC9C0 \uB9D0\uB77C\uACE0."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[1].lines.Array.data[0]'
-      value: "\uAC11\uC790\uAE30 \uB3C8\uC744 \uC65C \uC8FC\uB294\uAC74\uAC00? \uB098\uC57C
-        \uACE0\uB9D9\uC9C0\uB9CC.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[1].lines.Array.data[1]'
-      value: "\uC77C\uB2E8 \uBC1B\uACA0\uB124. \uACE0\uB9D9\uB124."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[2].lines.Array.data[0]'
-      value: "\uC774 \uACE8\uB3D9\uD488\uC740 \uB300\uCCB4... \uC5B4\uB514\uC11C
-        \uBC1C\uACAC\uD55C\uAC74\uAC00?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[2].lines.Array.data[1]'
-      value: "\uB0B4\uAC00 \uC0AC\uACA0\uB124. \uB300\uC2E0 \uC5F4\uC1E0\uB97C \uCC3E\uB3C4\uB85D
-        \uB9C8\uBC95\uC744 \uC368\uC8FC\uC9C0."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[2].lines.Array.data[2]'
-      value: "\uD718\uD30C\uB78C \uC18C\uB9AC\uAC00 \uB4E4\uB9AC\uBA74 \uADF8 \uACF3\uC73C\uB85C
-        \uAC00\uC11C \uB545\uC744 \uD30C\uBCF4\uAC8C."
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
@@ -501,11 +436,6 @@ PrefabInstance:
       propertyPath: 'reactions.Array.data[3].lines.Array.data[1]'
       value: "\uC774 \uC5B4\uCC0C\uD560 \uBC14\uB97C \uBAA8\uB974\uACA0\uB124.. \uB300\uC2E0
         \uC774 \uC5F4\uC1E0\uB97C \uC8FC\uB3C4\uB85D \uD558\uC9C0."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: 'reactions.Array.data[3].lines.Array.data[2]'
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5830761068020889652, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
