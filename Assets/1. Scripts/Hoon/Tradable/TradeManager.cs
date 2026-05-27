@@ -46,6 +46,8 @@ public class TradeManager : MonoBehaviour
             case ItemType.MusicBox:
                 _whistleController.StartWhistle();
                 break;
+            case ItemType.Fish:
+                break;
         }
     }
 }

@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
       propertyPath: reactions.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
@@ -425,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reactions.Array.data[2].type
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
+        type: 3}
+      propertyPath: reactions.Array.data[3].type
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
@@ -440,6 +445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reactions.Array.data[2].lines.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
+        type: 3}
+      propertyPath: reactions.Array.data[3].lines.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
@@ -480,6 +490,22 @@ PrefabInstance:
       propertyPath: 'reactions.Array.data[2].lines.Array.data[2]'
       value: "\uD718\uD30C\uB78C \uC18C\uB9AC\uAC00 \uB4E4\uB9AC\uBA74 \uADF8 \uACF3\uC73C\uB85C
         \uAC00\uC11C \uB545\uC744 \uD30C\uBCF4\uAC8C."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
+        type: 3}
+      propertyPath: 'reactions.Array.data[3].lines.Array.data[0]'
+      value: "\uB0B4\uAC00 \uC81C\uC77C \uC88B\uC544\uD558\uB294 \uC0DD\uC120\uC774\uC796\uB294\uAC00!!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
+        type: 3}
+      propertyPath: 'reactions.Array.data[3].lines.Array.data[1]'
+      value: "\uC774 \uC5B4\uCC0C\uD560 \uBC14\uB97C \uBAA8\uB974\uACA0\uB124.. \uB300\uC2E0
+        \uC774 \uC5F4\uC1E0\uB97C \uC8FC\uB3C4\uB85D \uD558\uC9C0."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
+        type: 3}
+      propertyPath: 'reactions.Array.data[3].lines.Array.data[2]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5830761068020889652, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
