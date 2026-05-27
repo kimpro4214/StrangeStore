@@ -13,7 +13,9 @@ public class TradeManager : MonoBehaviour
 
     public void OnSnapTradableItem(TradableItem item)
     {
-         ProcessTrade(item.type);
+        // 상인 대사
+        DialogueMerchant.Instance.OnItemSnapped(item);
+        ProcessTrade(item.type);
     }
 
     // 아이템을 올려놨을 때 타입별로 실행할 분기
@@ -23,7 +25,6 @@ public class TradeManager : MonoBehaviour
         {
             case ItemType.Apple:
                 Debug.Log("사과 스냅.");
-                // 여기에 애니메이션 실행 등 로직 추가
                 break;
             case ItemType.Money:
                 Debug.Log("돈 스냅.");
