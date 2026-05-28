@@ -8,13 +8,13 @@ public class DialogueTyper : MonoBehaviour
     public float charDelay = 0.05f;
     public bool isTyping = false;
 
-    public void ShowText(string fullText)
+    public void ShowText(string fullText, float autoEraseDelay = 0f)
     {
         StopAllCoroutines();
-        StartCoroutine(TypeText(fullText));
+        StartCoroutine(TypeText(fullText, autoEraseDelay));
     }
 
-    IEnumerator TypeText(string fullText)
+    IEnumerator TypeText(string fullText, float autoEraseDelay)
     {
         isTyping = true;
         textUI.text = fullText;
@@ -25,6 +25,13 @@ public class DialogueTyper : MonoBehaviour
             yield return new WaitForSeconds(charDelay);
         }
         isTyping = false;
+
+        // 자동 삭제
+        if (autoEraseDelay > 0f)
+        {
+            yield return new WaitForSeconds(autoEraseDelay);
+            EraseText();
+        }
     }
 
     public void EraseText()

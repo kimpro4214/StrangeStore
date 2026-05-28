@@ -55,6 +55,7 @@ public class ShovelController : MonoBehaviour
         {
             _digCoroutine = StartCoroutine(DigCharge());
             _gaugeBar.gameObject.SetActive(true);
+            AudioManager.Instance.Play2D(SoundName.dig);
         }
 
         // 트리거 떼면 취소
@@ -63,6 +64,7 @@ public class ShovelController : MonoBehaviour
         {
             CancelCharge();
             _gaugeBar.gameObject.SetActive(false);
+            AudioManager.Instance.Stop2D(SoundName.dig);
         }
     }
 
