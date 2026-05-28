@@ -46,20 +46,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glasses
       objectReference: {fileID: 0}
-    - target: {fileID: 9095186020904564297, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
+    - target: {fileID: 7458465744277486304, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.09302338
+      propertyPath: m_LocalPosition.x
+      value: 2.6
       objectReference: {fileID: 0}
-    - target: {fileID: 9095186020904564297, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
+    - target: {fileID: 7458465744277486304, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.09302338
+      propertyPath: m_LocalPosition.y
+      value: 0.03
       objectReference: {fileID: 0}
-    - target: {fileID: 9095186020904564297, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
+    - target: {fileID: 7458465744277486304, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.09302338
+      propertyPath: m_LocalPosition.z
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 9095186020904564297, guid: 3e77c9b1a09ccd445a6cafb0e58b45ce,
         type: 3}

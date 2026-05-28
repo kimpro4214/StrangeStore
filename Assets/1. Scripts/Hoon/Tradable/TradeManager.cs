@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TradeManager : MonoBehaviour
 {
-    public static TradeManager instance;
+    public static TradeManager Instance;
     [SerializeField] public WhistleController _whistleController;
+    public GameObject key;
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (Instance == null) Instance = this;
     }
 
     public void OnSnapTradableItem(TradableItem item)
@@ -26,15 +27,6 @@ public class TradeManager : MonoBehaviour
             case ItemType.Apple:
                 Debug.Log("»ç°ú ½º³À.");
                 break;
-            case ItemType.Money:
-                Debug.Log("µ· ½º³À.");
-                break;
-            case ItemType.MusicBox:
-                Debug.Log("¹ÂÁ÷ ¹Ú½º ½º³À.");
-                break;
-            case ItemType.Fish:
-                Debug.Log("»ý¼± ½º³À. ¿­¼è ¼ÒÈ¯");
-                break;
         }
     }
 
@@ -47,6 +39,8 @@ public class TradeManager : MonoBehaviour
                 _whistleController.StartWhistle();
                 break;
             case ItemType.Fish:
+                AudioManager.Instance.Play2D(SoundName.key_spawn);
+                key.SetActive(true);
                 break;
         }
     }

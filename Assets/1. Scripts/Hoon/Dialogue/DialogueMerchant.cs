@@ -80,6 +80,6 @@ public class DialogueMerchant : MonoBehaviour
     void EndDialogue()
     {
         typer.EraseText();
-        TradeManager.instance.OnDialogueEnded(currentItem);
+        TradeManager.Instance.OnDialogueEnded(currentItem);
     }
 }

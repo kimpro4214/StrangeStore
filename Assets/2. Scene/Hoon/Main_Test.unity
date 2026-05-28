@@ -119,6 +119,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &135172790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5563631776788718006, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3212175249934600151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &622540832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +187,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
+        type: 3}
+      propertyPath: sounds.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b5ffea70cab09604cab529ff08a9ca53, type: 3}
+    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
+        type: 3}
+      propertyPath: sounds.Array.data[9].name
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
+        type: 3}
+      propertyPath: sounds.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
+        type: 3}
+      propertyPath: sounds.Array.data[9].volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -735,7 +766,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2425493257433674520, guid: 21e414fe7b9b39b4386617a6f4fb13b2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 21e414fe7b9b39b4386617a6f4fb13b2, type: 3}
 --- !u!1001 &2011594154
 PrefabInstance:
@@ -948,6 +983,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5429534681129644521, guid: 687b889e185fdbe4c90fb90417b38d1c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9843137
+      objectReference: {fileID: 0}
     - target: {fileID: 7132214424670567536, guid: 687b889e185fdbe4c90fb90417b38d1c,
         type: 3}
       propertyPath: _player
@@ -1039,6 +1079,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4295959328336823178, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+        type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 135172790}
     - target: {fileID: 4295959328336823178, guid: 47e1a6e9d17ab144daf94b1eb431864a,
         type: 3}
       propertyPath: _whistleController
