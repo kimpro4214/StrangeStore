@@ -65,7 +65,7 @@ public class SnapTradableController : MonoBehaviour
 
             // 트레이드 함수 실행
             TradableItem item = currentInteractor.GetComponent<TradableItem>();
-            if (item != null) TradeManager.instance.OnSnapTradableItem(item);
+            if (item != null) TradeManager.Instance.OnSnapTradableItem(item);
 
             ActiveGhost(item, false);
             StartCoroutine(HandleAndDestroy(currentInteractor.gameObject));
