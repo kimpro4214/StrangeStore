@@ -408,30 +408,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.76
       objectReference: {fileID: 0}
-    - target: {fileID: 6806933808931272888, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.22
-      objectReference: {fileID: 0}
     - target: {fileID: 8361422312280987382, guid: 713295b418a8bb04a91ba8b8e25ec310,
         type: 3}
       propertyPath: m_Name
       value: MusicBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.10067832
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.10067832
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.10067832
       objectReference: {fileID: 0}
     - target: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
         type: 3}

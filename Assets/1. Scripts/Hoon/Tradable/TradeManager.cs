@@ -20,17 +20,17 @@ public class TradeManager : MonoBehaviour
         OnSnapTrade(item.type);
     }
 
-    // 아이템을 올려놓은 순간 타입별로 실행할 분기
+    // 아이템을 올려놓은 순간 실행.
     public void OnSnapTrade(ItemType type)
     {
+        // 상인 힌트 애니메이션 type에 따라 실행.
+        merchantHintAnimator.PlayHintSequence(type);
+
+        // 올려놓은 아이템 타입별 실행 함수 분기
         switch (type)
         {
             case ItemType.Apple:
                 Debug.Log("사과 거래.");
-                if (merchantHintAnimator != null)
-                {
-                    merchantHintAnimator.PlayHintSequence();
-                }
                 break;
         }
     }
