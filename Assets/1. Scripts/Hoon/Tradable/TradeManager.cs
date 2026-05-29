@@ -7,6 +7,7 @@ public class TradeManager : MonoBehaviour
     public static TradeManager Instance;
     [SerializeField] public WhistleController _whistleController;
     public GameObject key;
+    [SerializeField] private MerchantHintAnimator merchantHintAnimator;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -14,23 +15,27 @@ public class TradeManager : MonoBehaviour
 
     public void OnSnapTradableItem(TradableItem item)
     {
-        // »óÀÎ ´ë»ç
+        // ìƒì¸ ëŒ€ì‚¬
         DialogueMerchant.Instance.OnItemSnapped(item);
         OnSnapTrade(item.type);
     }
 
-    // ¾ÆÀÌÅÛÀ» ¿Ã·Á³õÀº ¼ø°£ Å¸ÀÔº°·Î ½ÇÇàÇÒ ºĞ±â
+    // ì•„ì´í…œì„ ì˜¬ë ¤ë†“ì€ ìˆœê°„ íƒ€ì…ë³„ë¡œ ì‹¤í–‰í•  ë¶„ê¸°
     public void OnSnapTrade(ItemType type)
     {
         switch (type)
         {
             case ItemType.Apple:
-                Debug.Log("»ç°ú ½º³À.");
+                Debug.Log("ì‚¬ê³¼ ê±°ë˜.");
+                if (merchantHintAnimator != null)
+                {
+                    merchantHintAnimator.PlayHintSequence();
+                }
                 break;
         }
     }
 
-    // »óÀÎÀÇ ´ë»ç°¡ ¸ğµÎ ³¡³­ Á÷ÈÄ ½ÇÇàÇÒ ºĞ±â
+    // ìƒì¸ì˜ ëŒ€ì‚¬ê°€ ëª¨ë‘ ëë‚œ ì§í›„ ì‹¤í–‰í•  ë¶„ê¸°
     public void OnDialogueEnded(ItemType type)
     {
         switch (type)
