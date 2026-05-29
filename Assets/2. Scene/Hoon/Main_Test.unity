@@ -919,11 +919,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793295636276679990, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3793295636276679990, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
       propertyPath: m_VerticalAlignment
       value: 256
       objectReference: {fileID: 0}
@@ -931,11 +926,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3793295636276679990, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3836008175398452755, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
@@ -966,11 +956,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reactions.Array.data[4].type
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
-        type: 3}
-      propertyPath: reactions.Array.data[3].lines.Array.size
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3930448733891717095, guid: 27589909ee4ba0140b5b7d252bb31a19,
         type: 3}
