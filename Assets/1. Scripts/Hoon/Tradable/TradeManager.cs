@@ -6,8 +6,13 @@ public class TradeManager : MonoBehaviour
 {
     public static TradeManager Instance;
     [SerializeField] public WhistleController _whistleController;
+    [Header("보상으로 줄 열쇠")]
     public GameObject key;
     [SerializeField] private MerchantHintAnimator merchantHintAnimator;
+    [Header("다시 돌려줄 아이템")]
+    [SerializeField] private GameObject[] returnItems;
+    [Header("돌려줄 위치")]
+    [SerializeField] private Transform returnPoint;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -20,17 +25,17 @@ public class TradeManager : MonoBehaviour
         OnSnapTrade(item.type);
     }
 
-    // 아이템을 올려놓은 순간 타입별로 실행할 분기
+    // 아이템을 올려놓은 순간 실행.
     public void OnSnapTrade(ItemType type)
     {
+        // 상인 힌트 애니메이션 type에 따라 실행.
+        merchantHintAnimator.PlayHintSequence(type);
+
+        // 올려놓은 아이템 타입별 실행 함수 분기
         switch (type)
         {
             case ItemType.Apple:
                 Debug.Log("사과 거래.");
-                if (merchantHintAnimator != null)
-                {
-                    merchantHintAnimator.PlayHintSequence();
-                }
                 break;
         }
     }
@@ -46,6 +51,12 @@ public class TradeManager : MonoBehaviour
             case ItemType.Fish:
                 AudioManager.Instance.Play2D(SoundName.key_spawn);
                 key.SetActive(true);
+                break;
+            case ItemType.Apple:
+                Instantiate(returnItems[0], returnPoint.position, returnPoint.rotation);
+                break;
+            case ItemType.Money:
+                Instantiate(returnItems[1], returnPoint.position, returnPoint.rotation);
                 break;
         }
     }

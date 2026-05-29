@@ -3,15 +3,8 @@ using UnityEngine;
 
 public class MerchantHintAnimator : MonoBehaviour
 {
-    private static readonly int VictoryHash = Animator.StringToHash("Victory");
-    private static readonly int StandingGreetingHash = Animator.StringToHash("Standing Greeting");
-    private static readonly int SpinningHash = Animator.StringToHash("Spinning");
-    private static readonly int IdleHash = Animator.StringToHash("SharkmanIdle");
 
     [SerializeField] private Animator animator;
-    [SerializeField] private float transitionDuration = 0.1f;
-
-    private Coroutine hintRoutine;
 
     private void Awake()
     {
@@ -21,52 +14,27 @@ public class MerchantHintAnimator : MonoBehaviour
         }
     }
 
-    public void PlayHintSequence()
+    public void PlayHintSequence(ItemType item)
     {
         if (animator == null) return;
 
-        if (hintRoutine != null)
+        string targetTrigger = "";
+        switch (item)
         {
-            StopCoroutine(hintRoutine);
+            case ItemType.Apple:
+                targetTrigger = "HintStandingGreeting";
+                break;
+            case ItemType.Dumbbell:
+                targetTrigger = "HintVictory";
+                break;
+            case ItemType.Money:
+                targetTrigger = "HintSpinning";
+                break;
+            default:
+                Debug.Log("ÈùÆ® ¾ÆÀÌÅÛÀÌ ¾Æ´Ô.");
+                return;
         }
 
-        hintRoutine = StartCoroutine(PlaySequence());
-    }
-
-    private IEnumerator PlaySequence()
-    {
-        yield return PlayState(VictoryHash);
-        yield return PlayState(StandingGreetingHash);
-        yield return PlayState(SpinningHash);
-
-        animator.CrossFadeInFixedTime(IdleHash, transitionDuration, 0, 0f);
-        hintRoutine = null;
-    }
-
-    private IEnumerator PlayState(int stateHash)
-    {
-        animator.CrossFadeInFixedTime(stateHash, transitionDuration, 0, 0f);
-        yield return null;
-
-        while (!IsCurrentState(stateHash))
-        {
-            yield return null;
-        }
-
-        while (IsCurrentState(stateHash))
-        {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (!animator.IsInTransition(0) && stateInfo.normalizedTime >= 0.98f)
-            {
-                yield break;
-            }
-
-            yield return null;
-        }
-    }
-
-    private bool IsCurrentState(int stateHash)
-    {
-        return animator.GetCurrentAnimatorStateInfo(0).shortNameHash == stateHash;
+        animator.SetTrigger(targetTrigger);
     }
 }

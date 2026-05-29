@@ -22,6 +22,8 @@ public class ShovelController : MonoBehaviour
     [Header("게이지 3D 오브젝트")]
     [SerializeField] private Transform _gaugeBar;  // 스케일로 표시할 바
 
+    [SerializeField] private GameObject particle;
+
     private bool _isGrabbed = false;
     public bool canInteract = false;
     private bool isCleared = false;
@@ -43,6 +45,12 @@ public class ShovelController : MonoBehaviour
 
         // 놓으면 차징 취소
         if (!_isGrabbed) CancelCharge();
+
+        if (_isGrabbed)
+        {
+            DialogueShovel.Instance.OnGrab();
+            particle.SetActive(false);
+        }
     }
 
     private void Update()
