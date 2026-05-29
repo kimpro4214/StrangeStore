@@ -447,6 +447,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27589909ee4ba0140b5b7d252bb31a19, type: 3}
+--- !u!114 &1056184707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5122500177915039977, guid: 27589909ee4ba0140b5b7d252bb31a19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056184706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbc4c530c16a2a43b1fe271317d62fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MerchantHintAnimator
 --- !u!1001 &1104632403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,7 +747,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2425493257433674520, guid: 21e414fe7b9b39b4386617a6f4fb13b2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 21e414fe7b9b39b4386617a6f4fb13b2, type: 3}
 --- !u!1001 &2011594154
 PrefabInstance:
@@ -1044,6 +1060,11 @@ PrefabInstance:
       propertyPath: _whistleController
       value: 
       objectReference: {fileID: 1104632404}
+    - target: {fileID: 4295959328336823178, guid: 47e1a6e9d17ab144daf94b1eb431864a,
+        type: 3}
+      propertyPath: merchantHintAnimator
+      value: 
+      objectReference: {fileID: 1056184707}
     - target: {fileID: 8295986979552246904, guid: 47e1a6e9d17ab144daf94b1eb431864a,
         type: 3}
       propertyPath: m_LocalPosition.x
