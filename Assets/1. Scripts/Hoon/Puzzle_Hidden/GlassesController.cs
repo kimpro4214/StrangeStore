@@ -1,10 +1,13 @@
 using Oculus.Interaction;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class GlassesController : MonoBehaviour
 {
     [Header("Meta ±×·¦ ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private GrabInteractable _grabInteractable;
+
+    [SerializeField] private GameObject particle;
 
     private bool hasDialogued = false;
 
@@ -17,6 +20,7 @@ public class GlassesController : MonoBehaviour
         if (hasDialogued) return;
         if (args.NewState != InteractableState.Select) return;
 
+        particle.SetActive(false);
         hasDialogued = true;
         DialogueGlasses.Instance.OnGrab();
     }
