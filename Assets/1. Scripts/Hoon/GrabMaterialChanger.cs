@@ -4,9 +4,8 @@ using Oculus.Interaction;
 public class GrabMaterialChanger : MonoBehaviour
 {
     [SerializeField] private GrabInteractable _grabInteractable;
-    [SerializeField] private MeshRenderer _renderer;
-    [SerializeField] private Material _normalMaterial;
-    [SerializeField] private Material _grabbedMaterial;
+    [SerializeField] private SkinnedMeshRenderer _renderer;
+    [SerializeField] private Material[] _grabbedMaterial;
 
     private void OnEnable() => _grabInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _grabInteractable.WhenStateChanged -= HandleStateChanged;
@@ -15,8 +14,8 @@ public class GrabMaterialChanger : MonoBehaviour
     {
         if (args.NewState == InteractableState.Select)
         {
-            _renderer.material = _grabbedMaterial;
-            _grabInteractable.WhenStateChanged -= HandleStateChanged;  // 한 번 후 구독 해제
+            _renderer.materials = _grabbedMaterial;  // 배열 통째로 교체
+            _grabInteractable.WhenStateChanged -= HandleStateChanged;
         }
     }
 }
