@@ -15,4 +15,8 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(openDelay);
         animator.SetTrigger("Door_Open");
     }
+    public void CloseDoor()
+    {
+        animator.SetTrigger("Door_Close");
+    }
 }

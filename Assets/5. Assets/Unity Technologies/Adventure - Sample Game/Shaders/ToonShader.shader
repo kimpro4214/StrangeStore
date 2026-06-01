@@ -13,7 +13,6 @@
 	SubShader {
 		Tags { "RenderType"="Opaque" "Queue"="Transparent+2"}
 		LOD 200
-
 		Pass
 		{
 			Name "OUTLINE"
