@@ -1605,7 +1605,7 @@ MonoBehaviour:
   - type: 0
     lines:
     - "\uBB50\uC57C \uC120\uBB3C\uC778\uAC00? \uBC18\uAC11\uAD70."
-    - "\uC0AC\uACFC\uB294 \uC369\uC5B4 \uB118\uCE58\uB2C8 \uB2E4\uC2DC \uAC00\uC838\uAC00\uAC8C."
+    - "\uACE0\uB9D9\uAC8C \uBC1B\uACA0\uB124."
   - type: 1
     lines:
     - "\uAC11\uC790\uAE30 \uB3C8\uC744 \uC65C \uC8FC\uB294\uAC74\uAC00?"
@@ -1617,16 +1617,12 @@ MonoBehaviour:
       \uB9C8\uBC95\uC744 \uC368\uC8FC\uC9C0."
     - "\uD718\uD30C\uB78C \uC18C\uB9AC\uAC00 \uB4E4\uB9AC\uBA74 \uADF8 \uACF3\uC73C\uB85C
       \uAC00\uC11C \uB545\uC744 \uD30C\uBCF4\uAC8C."
-  - type: 3
-    lines:
-    - "\uC774\uAC78 \uC65C \uC8FC\uB294 \uAC74\uAC00..?"
-    - "\uB0B4 \uC774\uB450\uADFC\uC774\uB77C\uB3C4 \uBCF4\uC5EC\uC904\uD14C\uB2C8
-      \uB3C4\uB85C \uAC00\uC838\uAC00\uAC8C."
   - type: 4
     lines:
     - "\uB0B4\uAC00 \uC81C\uC77C \uC88B\uC544\uD558\uB294 \uC0DD\uC120\uC774\uC796\uB294\uAC00!!!"
-    - "\uB108\uBB34 \uACE0\uB9D9\uB124.. \uC120\uBB3C\uB85C \uC774 \uC5F4\uC1E0\uB97C
-      \uC8FC\uACA0\uB124."
+    - "\uC774 \uC5B4\uCC0C\uD560 \uBC14\uB97C \uBAA8\uB974\uACA0\uB124.. \uB300\uC2E0
+      \uC774 \uC5F4\uC1E0\uB97C \uC8FC\uB3C4\uB85D \uD558\uC9C0."
+  background: {fileID: 7042517519240523186}
 --- !u!114 &7198658601352124438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,6 +1638,81 @@ MonoBehaviour:
   textUI: {fileID: 3793295636276679990}
   charDelay: 0.05
   isTyping: 0
+--- !u!1 &7042517519240523186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3772755077597781366}
+  - component: {fileID: 1232717241297970208}
+  - component: {fileID: 6090347667074353892}
+  m_Layer: 8
+  m_Name: Text_Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3772755077597781366
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042517519240523186}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00012622883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6177588610733105493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0004272461, y: 0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1232717241297970208
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042517519240523186}
+  m_CullTransparentMesh: 1
+--- !u!114 &6090347667074353892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042517519240523186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5372549}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7577799397409525289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2106,7 @@ RectTransform:
   m_LocalScale: {x: 0.0004721952, y: 0.0004721952, z: 0.0004721952}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3772755077597781366}
   - {fileID: 6136827384472138456}
   m_Father: {fileID: 9168582076481497387}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

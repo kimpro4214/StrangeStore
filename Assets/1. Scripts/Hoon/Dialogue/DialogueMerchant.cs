@@ -15,6 +15,9 @@ public class DialogueMerchant : MonoBehaviour
     [Header("아이템별 대사")]
     [SerializeField] private ItemReaction[] reactions;
 
+    [Header("대사 배경")]
+    [SerializeField] private GameObject background;
+
     [System.Serializable]
     public class ItemReaction
     {
@@ -30,6 +33,7 @@ public class DialogueMerchant : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         _reactionMap = reactions.ToDictionary(r => r.type, r => r.lines);
+        background.SetActive(false);
     }
 
     public void OnItemSnapped(TradableItem item) => StartCoroutine(OnItemGiven(item));
@@ -45,7 +49,7 @@ public class DialogueMerchant : MonoBehaviour
             foreach (var l in lines) lineQueue.Enqueue(l);
         else
             lineQueue.Enqueue("Tradable 아이템 대사가 지정되지 않음.");
-
+        background.SetActive(true);
         ShowNext();
     }
 
@@ -79,6 +83,7 @@ public class DialogueMerchant : MonoBehaviour
 
     void EndDialogue()
     {
+        background.SetActive(false);
         typer.EraseText();
         TradeManager.Instance.OnDialogueEnded(currentItem);
     }
