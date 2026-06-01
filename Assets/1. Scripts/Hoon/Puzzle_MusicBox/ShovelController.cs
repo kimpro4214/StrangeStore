@@ -29,14 +29,16 @@ public class ShovelController : MonoBehaviour
     private bool isCleared = false;
     private Coroutine _digCoroutine;
 
+    private bool _triggerArmed = false;  // 차징 입력 허용 여부 (잡을 때 눌린 트리거 무시용)
+
     private void OnEnable() => _grabInteractable.WhenStateChanged += HandleStateChanged;
     private void OnDisable() => _grabInteractable.WhenStateChanged -= HandleStateChanged;
 
     private void Start()
     {
         key.SetActive(false);
-        _gaugeBar.gameObject.SetActive(false);
         UpdateGauge(0f);
+        _gaugeBar.gameObject.SetActive(false);
     }
 
     private void HandleStateChanged(InteractableStateChangeArgs args)
@@ -50,6 +52,7 @@ public class ShovelController : MonoBehaviour
         {
             DialogueShovel.Instance.OnGrab();
             particle.SetActive(false);
+            _triggerArmed = false;   // 잡은 직후엔 차징 잠금 (트리거 한번 떼야 풀림)
         }
     }
 
@@ -57,18 +60,26 @@ public class ShovelController : MonoBehaviour
     {
         if (!_isGrabbed || isCleared) return;
 
-        // 트리거 누르기 시작
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
-            OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+        bool triggerHeld =
+            OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
+            OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
+
+        // 잡을 때 눌려있던 트리거를 한 번 떼야 차징 가능 상태로 전환
+        if (!_triggerArmed)
+        {
+            if (!triggerHeld) _triggerArmed = true;  // 손 뗐다 → 이제 허용
+            return;
+        }
+
+        // 트리거 누르는 동안 차징 시작
+        if (triggerHeld && _digCoroutine == null)
         {
             _digCoroutine = StartCoroutine(DigCharge());
             _gaugeBar.gameObject.SetActive(true);
             AudioManager.Instance.Play2D(SoundName.dig);
         }
-
-        // 트리거 떼면 취소
-        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
-            OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+        // 트리거 떼면 차징 취소
+        else if (!triggerHeld && _digCoroutine != null)
         {
             CancelCharge();
             _gaugeBar.gameObject.SetActive(false);
@@ -91,6 +102,7 @@ public class ShovelController : MonoBehaviour
         UpdateGauge(0f);  // 게이지 리셋
         _digCoroutine = null;
         Dig();
+        _triggerArmed = false;
     }
 
     private void CancelCharge()

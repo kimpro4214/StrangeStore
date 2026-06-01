@@ -86,5 +86,6 @@ public class DialogueMerchant : MonoBehaviour
         background.SetActive(false);
         typer.EraseText();
         TradeManager.Instance.OnDialogueEnded(currentItem);
+        SnapTradableController.Instance.ActivateSnap();
     }
 }
