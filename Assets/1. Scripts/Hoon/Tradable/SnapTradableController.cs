@@ -36,6 +36,7 @@ public class SnapTradableController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         _ghostMap = _ghosts.ToDictionary(g => g.type, g => g.ghost);
+        ActivateSnap();
     }
 
     private void OnEnable() => _snapInteractable.WhenStateChanged += HandleStateChanged;
@@ -59,7 +60,7 @@ public class SnapTradableController : MonoBehaviour
         {
             SnapInteractor currentInteractor = _snapInteractable.Interactors.FirstOrDefault();
 
-            // 잡기 사운드 재생, 잡기 비활성화
+            // 잡기 사운드 재생, 잡기, 스냅 비활성화
             AudioManager.Instance.Play2D(SoundName.snap_item);
             currentInteractor.GetComponent<GrabInteractable>().enabled = false;
 
@@ -89,6 +90,9 @@ public class SnapTradableController : MonoBehaviour
     {
         // 1초 후 상인에게 이동.
         yield return new WaitForSeconds(onBoardTime);
+
+        DeactivateSnap();
+
         var grab = item.GetComponent<Grabbable>();
         if (grab != null) grab.enabled = false;
 
@@ -102,5 +106,14 @@ public class SnapTradableController : MonoBehaviour
         item.transform.DOMove(_targetTransform.position, onMoveTime).SetEase(Ease.OutQuad);
         item.transform.DOScale(item.transform.localScale * 0.2f, onMoveTime);
         Destroy(item, onMoveTime);
+    }
+
+    public void ActivateSnap()
+    {
+        _snapInteractable.enabled = true;
+    }
+    public void DeactivateSnap()
+    {
+        _snapInteractable.enabled = false;
     }
 }
