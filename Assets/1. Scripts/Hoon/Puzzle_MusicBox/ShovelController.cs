@@ -61,13 +61,13 @@ public class ShovelController : MonoBehaviour
         if (!_isGrabbed || isCleared) return;
 
         bool triggerHeld =
-            OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) ||
-            OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
+            OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.55f ||
+            OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) > 0.55f;
 
         // 잡을 때 눌려있던 트리거를 한 번 떼야 차징 가능 상태로 전환
         if (!_triggerArmed)
         {
-            if (!triggerHeld) _triggerArmed = true;  // 손 뗐다 → 이제 허용
+            if (!triggerHeld) _triggerArmed = true;
             return;
         }
 

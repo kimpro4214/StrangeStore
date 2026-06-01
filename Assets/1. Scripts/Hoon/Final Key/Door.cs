@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     {
         yield return new WaitForSeconds(openDelay);
         animator.SetTrigger("Door_Open");
+        AudioManager.Instance.Play3D(SoundName.open_final_door, transform.position);
     }
     public void CloseDoor()
     {

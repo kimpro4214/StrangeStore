@@ -4,7 +4,7 @@ using System;
 public enum SoundName
 {
     bgm1, dig, dig_fail, dig_success,
-    whistel1, whistel2, lock_open, lock_explode, snap_item, key_spawn
+    whistel1, whistel2, lock_open, lock_explode, snap_item, key_spawn, open_final_door, spit
 }
 
 [System.Serializable]

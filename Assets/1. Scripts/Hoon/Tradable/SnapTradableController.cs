@@ -96,12 +96,6 @@ public class SnapTradableController : MonoBehaviour
         var grab = item.GetComponent<Grabbable>();
         if (grab != null) grab.enabled = false;
 
-        var grabInter = item.GetComponent<GrabInteractable>();
-        if (grabInter != null) grabInter.enabled = false;
-
-        var snapInteractor = item.GetComponent<SnapInteractor>();
-        if (snapInteractor != null) snapInteractor.enabled = false;
-
         // 1.5초간 이동, 0.2배로 작아짐 후 제거
         item.transform.DOMove(_targetTransform.position, onMoveTime).SetEase(Ease.OutQuad);
         item.transform.DOScale(item.transform.localScale * 0.2f, onMoveTime);
