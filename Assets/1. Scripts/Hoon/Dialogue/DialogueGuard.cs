@@ -14,6 +14,9 @@ public class DialogueGuard : MonoBehaviour
     [Header("가드 대사 리스트")]
     [SerializeField] private string[] reactions;
 
+    [Header("가드 대사 끝나고 나올 엔딩 크레딧")]
+    [SerializeField] EndingCreditController endingCreditController;
+
     Queue<string> lineQueue = new Queue<string>();
 
     Coroutine autoNextRoutine;
@@ -68,5 +71,6 @@ public class DialogueGuard : MonoBehaviour
     void EndDialogue()
     {
         typer.EraseText();
+        StartCoroutine(endingCreditController.FadeIn());
     }
 }
