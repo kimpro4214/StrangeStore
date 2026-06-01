@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Oculus.Interaction;
 using System.Collections;
 using UnityEngine;
@@ -11,8 +12,9 @@ public class TradeManager : MonoBehaviour
     [SerializeField] private MerchantHintAnimator merchantHintAnimator;
     [Header("다시 돌려줄 아이템")]
     [SerializeField] private GameObject[] returnItems;
-    [Header("돌려줄 위치")]
-    [SerializeField] private Transform returnPoint;
+    [Header("돌려주기 시작할 위치와 최종 위치")]
+    [SerializeField] private Transform returnStartPoint;
+    [SerializeField] private Transform returnEndPoint;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -53,11 +55,26 @@ public class TradeManager : MonoBehaviour
                 key.SetActive(true);
                 break;
             case ItemType.Apple:
-                Instantiate(returnItems[0], returnPoint.position, returnPoint.rotation);
+                StartCoroutine(ReturnItem(0));
                 break;
             case ItemType.Money:
-                Instantiate(returnItems[1], returnPoint.position, returnPoint.rotation);
+                StartCoroutine(ReturnItem(1));
+                break;
+            case ItemType.Dumbbell:
+                StartCoroutine(ReturnItem(2));
                 break;
         }
     }
+
+    private IEnumerator ReturnItem(int itemIndex)
+    {
+        GameObject returnItem = Instantiate(returnItems[itemIndex], returnStartPoint.position, returnStartPoint.rotation);
+        Vector3 originScale = returnItem.transform.localScale;
+        AudioManager.Instance.Play2D(SoundName.spit);
+        yield return null;
+        returnItem.transform.localScale = originScale * 0.2f;
+        returnItem.transform.DOMove(returnEndPoint.position, 0.7f);
+        returnItem.transform.DOScale(originScale, 0.7f);
+    }
+
 }

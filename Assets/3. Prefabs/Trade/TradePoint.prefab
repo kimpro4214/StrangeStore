@@ -3519,6 +3519,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5193609025197455782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6253304378217503019}
+  m_Layer: 0
+  m_Name: Return_Start_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6253304378217503019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5193609025197455782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.974, y: 0.952, z: 0.298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8295986979552246904}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &5397201516092984551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +4837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082190631320433800}
   m_Layer: 0
-  m_Name: Return_Point
+  m_Name: Return_End_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6403,6 +6434,7 @@ Transform:
   - {fileID: 2464762117484759699}
   - {fileID: 5079547127829461772}
   - {fileID: 6988108459625666871}
+  - {fileID: 6253304378217503019}
   - {fileID: 1082190631320433800}
   - {fileID: 1976313158610503464}
   m_Father: {fileID: 0}
@@ -6482,7 +6514,9 @@ MonoBehaviour:
   returnItems:
   - {fileID: 3342571942390989244, guid: 2f2412e7860dda24bbe82219c02419bb, type: 3}
   - {fileID: 7536262919425052736, guid: 4bc2365ba9b31e7458e4f8519c825b52, type: 3}
-  returnPoint: {fileID: 1082190631320433800}
+  - {fileID: 8359050142224296318, guid: faf5ae98aeca30d4fa6631ffae3bb08c, type: 3}
+  returnStartPoint: {fileID: 6253304378217503019}
+  returnEndPoint: {fileID: 1082190631320433800}
 --- !u!1 &9159641538670284263
 GameObject:
   m_ObjectHideFlags: 0

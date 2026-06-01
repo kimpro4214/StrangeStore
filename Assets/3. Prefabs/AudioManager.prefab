@@ -105,3 +105,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: 10
+    clip: {fileID: 8300000, guid: 7748c38c523f2cf419ceb7e5ac644c3c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 11
+    clip: {fileID: 8300000, guid: 2431ce3532ed9ea4f962b435aa31ce1b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

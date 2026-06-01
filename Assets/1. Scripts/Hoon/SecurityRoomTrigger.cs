@@ -8,5 +8,6 @@ public class SecurityRoomTrigger : MonoBehaviour
     {
         if (!other.CompareTag(playerTag)) return;
         SecurityCinemachine.Instance.StartSequence();
+        gameObject.SetActive(false);
     }
 }
