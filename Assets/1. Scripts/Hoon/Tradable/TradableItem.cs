@@ -14,7 +14,10 @@ public class TradableItem : MonoBehaviour
         _grabInteractable = GetComponent<GrabInteractable>();
     }
     private void OnEnable() => _grabInteractable.WhenStateChanged += OffParticle;
-    private void OnDisable() => _grabInteractable.WhenStateChanged -= OffParticle;
+    private void OnDisable()
+    {
+        _grabInteractable.WhenStateChanged -= OffParticle;
+    }
 
     public void OffParticle(InteractableStateChangeArgs args)
     {
