@@ -45,6 +45,7 @@ public class OptionController : MonoBehaviour
     public void RestartGame()
     {
         DOTween.KillAll();
+        AudioManager.Instance.Play2D(SoundName.bgm1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
