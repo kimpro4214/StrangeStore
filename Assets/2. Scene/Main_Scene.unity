@@ -189,11 +189,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
         type: 3}
-      propertyPath: sounds.Array.data[11].name
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090218763680083374, guid: e2aa3cac30909cb408140b7d12308206,
-        type: 3}
       propertyPath: sounds.Array.data[12].clip
       value: 
       objectReference: {fileID: 8300000, guid: 75134836c027ced4fb4687e1b539d6d6, type: 3}
@@ -817,46 +812,10 @@ PrefabInstance:
       propertyPath: _headTransform
       value: 
       objectReference: {fileID: 1548983360}
-    - target: {fileID: 1391354067589166642, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3800240983105305058, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: feeeadff77bcefc48bd1a0878b4e26c0,
-        type: 3}
     - target: {fileID: 5718177616773923525, guid: 9a03a69f84ad80246bb64f2ed4204750,
         type: 3}
       propertyPath: m_Name
       value: Option_Pannel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034021917145464482, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_Name
-      value: StrangeStoreLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 7377982861786924804, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.516
-      objectReference: {fileID: 0}
-    - target: {fileID: 7377982861786924804, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8784946928170060635, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.516
-      objectReference: {fileID: 0}
-    - target: {fileID: 8784946928170060635, guid: 9a03a69f84ad80246bb64f2ed4204750,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8838036573434008249, guid: 9a03a69f84ad80246bb64f2ed4204750,
         type: 3}
