@@ -8,6 +8,7 @@ public class SecurityRoomTrigger : MonoBehaviour
     {
         if (!other.CompareTag(playerTag)) return;
         SecurityCinemachine.Instance.StartSequence();
+        AudioManager.Instance.Play2D(SoundName.bgm2);
         gameObject.SetActive(false);
     }
 }

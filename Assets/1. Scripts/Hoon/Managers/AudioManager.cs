@@ -3,8 +3,11 @@ using System;
 
 public enum SoundName
 {
-    bgm1, dig, dig_fail, dig_success,
-    whistel1, whistel2, lock_open, lock_explode, snap_item, key_spawn, open_final_door, spit
+    bgm1, bgm2,
+    dig, dig_fail, dig_success,
+    whistel1, whistel2,
+    lock_open, lock_explode,
+    snap_item, key_spawn, open_final_door, spit
 }
 
 [System.Serializable]
@@ -116,6 +119,13 @@ public class AudioManager : MonoBehaviour
         if (s.loop)
         {
             if (_bgmMuted) return;
+            foreach (Sound otherSound in sounds)
+            {
+                if (otherSound.loop && otherSound.source != null && otherSound.source.isPlaying)
+                {
+                    otherSound.source.Stop();
+                }
+            }
             s.source.volume = s.volume * _bgmVolume;
             s.source.Play();
         }
