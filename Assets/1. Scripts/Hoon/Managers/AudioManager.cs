@@ -7,7 +7,8 @@ public enum SoundName
     dig, dig_fail, dig_success,
     whistel1, whistel2,
     lock_open, lock_explode,
-    snap_item, key_spawn, open_final_door, spit
+    snap_item, key_spawn, open_final_door, spit,
+    speak_merchant, speak_guard
 }
 
 [System.Serializable]
@@ -166,5 +167,16 @@ public class AudioManager : MonoBehaviour
         aSource.Play();
 
         Destroy(tempAudioGo, aSource.clip.length);
+    }
+
+    public void PlayNPCVoice(SoundName name, float minPitch = 0.9f, float maxPitch = 1.2f)
+    {
+        if (_sfxMuted) return;
+        Sound s = Array.Find(sounds, item => item.name == name);
+        if (s == null) return;
+
+        // 소리를 낼 때마다 오디오 소스의 피치를 랜덤하게 조절해서 웅얼거리는 느낌을 줌
+        s.source.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        s.source.PlayOneShot(s.source.clip, s.volume * _sfxVolume);
     }
 }
