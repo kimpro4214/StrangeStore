@@ -47,7 +47,7 @@ public class DialogueGuard : MonoBehaviour
             EndDialogue();
             return;
         }
-        typer.ShowText(lineQueue.Dequeue());
+        typer.ShowText(lineQueue.Dequeue(), SoundName.speak_guard, minFitch:0.25f, maxFitch:0.5f);
         autoNextRoutine = StartCoroutine(AutoNext());
     }
 

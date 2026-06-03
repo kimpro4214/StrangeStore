@@ -60,7 +60,7 @@ public class DialogueMerchant : MonoBehaviour
             EndDialogue();
             return;
         }
-        typer.ShowText(lineQueue.Dequeue());
+        typer.ShowText(lineQueue.Dequeue(), SoundName.speak_merchant);
         autoNextRoutine = StartCoroutine(AutoNext());
     }
 
