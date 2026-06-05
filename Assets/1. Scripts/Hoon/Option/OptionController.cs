@@ -48,4 +48,8 @@ public class OptionController : MonoBehaviour
         AudioManager.Instance.Play2D(SoundName.bgm1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void ExitGame()
+    {
+
+    }
 }

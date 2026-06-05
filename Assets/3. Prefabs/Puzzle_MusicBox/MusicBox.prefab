@@ -4484,6 +4484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TradableItem
   type: 2
+  particle: {fileID: 0}
 --- !u!1 &8362202268583870411
 GameObject:
   m_ObjectHideFlags: 0

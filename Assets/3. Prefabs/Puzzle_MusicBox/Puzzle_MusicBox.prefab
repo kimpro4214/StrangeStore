@@ -271,26 +271,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6528636405938174494}
     m_Modifications:
-    - target: {fileID: 4534774762677173296, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534774762677173296, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534774762677173296, guid: 713295b418a8bb04a91ba8b8e25ec310,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.76
-      objectReference: {fileID: 0}
     - target: {fileID: 8361422312280987382, guid: 713295b418a8bb04a91ba8b8e25ec310,
         type: 3}
       propertyPath: m_Name
       value: MusicBox
       objectReference: {fileID: 0}
+    - target: {fileID: 9098399199345647883, guid: 713295b418a8bb04a91ba8b8e25ec310,
+        type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 8964227471166847664}
     - target: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,6 +339,12 @@ PrefabInstance:
 --- !u!4 &8656426689508801052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9170012627202001996, guid: 713295b418a8bb04a91ba8b8e25ec310,
+    type: 3}
+  m_PrefabInstance: {fileID: 532449310048597584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8964227471166847664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8864481204140477664, guid: 713295b418a8bb04a91ba8b8e25ec310,
     type: 3}
   m_PrefabInstance: {fileID: 532449310048597584}
   m_PrefabAsset: {fileID: 0}
