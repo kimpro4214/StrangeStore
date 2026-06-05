@@ -23,14 +23,16 @@ public class RobotGrabInteraciton : MonoBehaviour
 
     public void OnGrab(InteractableStateChangeArgs args)
     {
-        _isGrabbed = (args.NewState == InteractableState.Select);
-        if (_isGrabbed)
+        if (args.NewState == InteractableState.Select)
         {
+            _isGrabbed = true;
             animator.SetTrigger("OnGrab");
             particle.SetActive(false);
         }
-        else
+
+        if (args.PreviousState == InteractableState.Select && args.NewState != InteractableState.Select)
         {
+            _isGrabbed = false;
             animator.SetTrigger("OnRelease");
         }
     }

@@ -50,6 +50,11 @@ public class OptionController : MonoBehaviour
     }
     public void ExitGame()
     {
-
+        #if UNITY_EDITOR
+        // 1. 유니티 에디터인 경우: 플레이 모드를 끕니다.
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }
