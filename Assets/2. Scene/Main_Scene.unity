@@ -119,6 +119,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &610006063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8964227471166847664, guid: 3bb27b62600ef0a419fc42eb1f796fa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104632403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &622540832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1354,11 +1360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle_Music_Box
       objectReference: {fileID: 0}
-    - target: {fileID: 6418955409572810472, guid: 3bb27b62600ef0a419fc42eb1f796fa7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.22
-      objectReference: {fileID: 0}
     - target: {fileID: 6528636405938174494, guid: 3bb27b62600ef0a419fc42eb1f796fa7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1409,6 +1410,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8730124585303480155, guid: 3bb27b62600ef0a419fc42eb1f796fa7,
+        type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 610006063}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
