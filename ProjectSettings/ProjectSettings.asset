@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -144,7 +144,8 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: da9775da6e247594ca2d5a7eebf80c32, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   xboxOneDisableKinectGpuReservation: 0
@@ -267,7 +268,7 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 6
+  AndroidTargetArchitectures: 2
   AndroidAllowedArchitectures: -13
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -643,7 +644,7 @@ PlayerSettings:
   - m_BuildTarget: LuminSupport
     m_GraphicsJobs: 0
   - m_BuildTarget: AndroidPlayer
-    m_GraphicsJobs: 0
+    m_GraphicsJobs: 1
   - m_BuildTarget: WebGLSupport
     m_GraphicsJobs: 0
   m_BuildTargetGraphicsJobMode:
@@ -652,6 +653,8 @@ PlayerSettings:
   - m_BuildTarget: XboxOnePlayer
     m_GraphicsJobMode: 0
   - m_BuildTarget: WindowsStandaloneSupport
+    m_GraphicsJobMode: 1
+  - m_BuildTarget: AndroidPlayer
     m_GraphicsJobMode: 1
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: iOSSupport
@@ -751,7 +754,10 @@ PlayerSettings:
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
   m_BuildTargetNormalMapEncoding: []
-  m_BuildTargetDefaultTextureCompressionFormat: []
+  m_BuildTargetDefaultTextureCompressionFormat:
+  - serializedVersion: 3
+    m_BuildTarget: Android
+    m_Formats: 01000000
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -1165,7 +1171,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
