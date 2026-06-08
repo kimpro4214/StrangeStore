@@ -6049,6 +6049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599996639967493183, guid: 3f96ec85163c8334094d5f4d6223ff86,
         type: 3}
+      propertyPath: drumLines.Array.data[1].answerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599996639967493183, guid: 3f96ec85163c8334094d5f4d6223ff86,
+        type: 3}
       propertyPath: drumLines.Array.data[2].answerIndex
       value: 8
       objectReference: {fileID: 0}
