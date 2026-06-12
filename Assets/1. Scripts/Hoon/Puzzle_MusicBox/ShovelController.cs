@@ -132,16 +132,16 @@ public class ShovelController : MonoBehaviour
 
         if (_digPoint.canDigging && canInteract)
         {
-            Debug.Log("열쇠 발굴 성공!");
             AudioManager.Instance.Play2D(SoundName.dig_success);
+            DialogueShovel.Instance.OnSuccess();
             _whistleController.StopWhistle();
             key.SetActive(true);
             isCleared = true;
         }
         else
         {
-            Debug.Log("발굴 위치가 아님 or 오르골 안건네줌");
             AudioManager.Instance.Play2D(SoundName.dig_fail);
+            DialogueShovel.Instance.OnFail();
         }
     }
 }

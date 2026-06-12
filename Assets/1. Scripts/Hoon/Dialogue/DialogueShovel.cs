@@ -11,6 +11,8 @@ public class DialogueShovel : MonoBehaviour
 
     [Header("삽 잡으면 보여줄 텍스트")]
     public string grabText = "트리거를 꾹 누르면 특정 땅이 파질 것 같은데..";
+    public string failText = "이 곳은 파지지 않는 것 같다..";
+    public string successText = "열쇠가 파졌다!!";
 
     public bool isFirst = true;
 
@@ -24,5 +26,15 @@ public class DialogueShovel : MonoBehaviour
         if (!isFirst) return;
         typer.ShowText(grabText, enableDelay);
         isFirst = false;
+    }
+
+    public void OnFail()
+    {
+        typer.ShowText(failText, enableDelay);
+    }
+
+    public void OnSuccess()
+    {
+        typer.ShowText(successText, enableDelay);
     }
 }
